@@ -1,0 +1,673 @@
+pay_date,employee,role,department,cost_class,hours,gross_pay,employer_taxes
+2025-10-15,Aaron Pike,Service Tech,Field Techs,direct,136.3,5553.71,527.6
+2025-10-15,Andre Wilkins,Install Helper,Install Crew,overhead,86.7,1979.17,188.02
+2025-10-15,Angela Brooks,General Manager,Management,overhead,86.7,4083.33,387.92
+2025-10-15,Brian Choi,Install Tech,Field Techs,direct,161.8,6598.19,626.83
+2025-10-15,Carlos Mendez,Service Tech,Field Techs,direct,152.3,6209.74,589.93
+2025-10-15,Chloe Martin,Marketing Manager,Marketing,overhead,86.7,2583.33,245.42
+2025-10-15,Danny Ortiz,Service Tech,Field Techs,direct,116.8,4748.68,451.13
+2025-10-15,Dee Ramsey,Fleet & Safety Coordinator,Operations,overhead,86.7,1916.67,182.08
+2025-10-15,Eli Torres,Install Helper,Install Crew,overhead,86.7,1958.33,186.04
+2025-10-15,Greg Sandoval,Comfort Advisor (Sales),Sales,overhead,86.7,2833.33,269.17
+2025-10-15,Harold Finch,Bookkeeper,Office,overhead,86.7,2416.67,229.58
+2025-10-15,Jake Sullivan,Install Lead,Field Techs,direct,122.9,5011.39,476.08
+2025-10-15,Jessica Lowe,CSR,Office,overhead,86.7,1750.0,166.25
+2025-10-15,Josh Whelan,Install Helper,Install Crew,overhead,86.7,1916.67,182.08
+2025-10-15,Kevin Brandt,Service Tech,Field Techs,direct,71.9,2930.83,278.43
+2025-10-15,Luis Herrera,Service Tech,Field Techs,direct,86.2,3513.06,333.74
+2025-10-15,Marcus Reyes,Senior Service Tech,Field Techs,direct,131.9,5369.53,510.1
+2025-10-15,Mike Dunlap,Service Manager,Operations,overhead,86.7,3000.0,285.0
+2025-10-15,Monica Reyes,CSR,Office,overhead,86.7,1708.33,162.29
+2025-10-15,Nina Patel,Comfort Advisor (Sales),Sales,overhead,86.7,2666.67,253.33
+2025-10-15,Priya Nair,Dispatcher,Operations,overhead,86.7,1916.67,182.08
+2025-10-15,Ray Thompson,Duct Crew Lead,Field Techs,direct,101.6,4144.09,393.69
+2025-10-15,Rosa Medina,Membership Coordinator,Office,overhead,86.7,1791.67,170.21
+2025-10-15,Sam Delgado,Service Tech,Field Techs,direct,128.7,5234.73,497.3
+2025-10-15,Tom Whitfield,Owner,Management,overhead,86.7,5000.0,475.0
+2025-10-15,Tyrone Jackson,Service Tech,Field Techs,direct,86.0,3508.05,333.26
+2025-10-15,Victor Alvarez,Install Lead,Field Techs,direct,220.4,8985.79,853.65
+2025-10-15,Walt Henderson,Warehouse / Parts,Operations,overhead,86.7,1833.33,174.17
+2025-10-31,Aaron Pike,Service Tech,Field Techs,direct,79.2,3225.68,306.44
+2025-10-31,Andre Wilkins,Install Helper,Install Crew,overhead,86.7,1979.17,188.02
+2025-10-31,Angela Brooks,General Manager,Management,overhead,86.7,4083.33,387.92
+2025-10-31,Brian Choi,Install Tech,Field Techs,direct,121.4,4948.98,470.15
+2025-10-31,Carlos Mendez,Service Tech,Field Techs,direct,87.6,3571.64,339.31
+2025-10-31,Chloe Martin,Marketing Manager,Marketing,overhead,86.7,2583.33,245.42
+2025-10-31,Danny Ortiz,Service Tech,Field Techs,direct,157.0,6401.3,608.12
+2025-10-31,Dee Ramsey,Fleet & Safety Coordinator,Operations,overhead,86.7,1916.67,182.08
+2025-10-31,Eli Torres,Install Helper,Install Crew,overhead,86.7,1958.33,186.04
+2025-10-31,Greg Sandoval,Comfort Advisor (Sales),Sales,overhead,86.7,2833.33,269.17
+2025-10-31,Harold Finch,Bookkeeper,Office,overhead,86.7,2416.67,229.58
+2025-10-31,Jake Sullivan,Install Lead,Field Techs,direct,230.4,9394.45,892.47
+2025-10-31,Jessica Lowe,CSR,Office,overhead,86.7,1750.0,166.25
+2025-10-31,Josh Whelan,Install Helper,Install Crew,overhead,86.7,1916.67,182.08
+2025-10-31,Kevin Brandt,Service Tech,Field Techs,direct,87.2,3540.73,336.37
+2025-10-31,Luis Herrera,Service Tech,Field Techs,direct,46.6,1891.78,179.72
+2025-10-31,Marcus Reyes,Senior Service Tech,Field Techs,direct,133.9,5459.02,518.61
+2025-10-31,Mike Dunlap,Service Manager,Operations,overhead,86.7,3000.0,285.0
+2025-10-31,Monica Reyes,CSR,Office,overhead,86.7,1708.33,162.29
+2025-10-31,Nina Patel,Comfort Advisor (Sales),Sales,overhead,86.7,2666.67,253.33
+2025-10-31,Priya Nair,Dispatcher,Operations,overhead,86.7,1916.67,182.08
+2025-10-31,Ray Thompson,Duct Crew Lead,Field Techs,direct,109.1,4445.84,422.35
+2025-10-31,Rosa Medina,Membership Coordinator,Office,overhead,86.7,1791.67,170.21
+2025-10-31,Sam Delgado,Service Tech,Field Techs,direct,90.2,3675.9,349.21
+2025-10-31,Tom Whitfield,Owner,Management,overhead,86.7,5000.0,475.0
+2025-10-31,Tyrone Jackson,Service Tech,Field Techs,direct,52.1,2123.18,201.7
+2025-10-31,Victor Alvarez,Install Lead,Field Techs,direct,254.7,10384.07,986.49
+2025-10-31,Walt Henderson,Warehouse / Parts,Operations,overhead,86.7,1833.33,174.17
+2025-11-15,Aaron Pike,Service Tech,Field Techs,direct,58.2,2368.28,224.99
+2025-11-15,Andre Wilkins,Install Helper,Install Crew,overhead,86.7,1979.17,188.02
+2025-11-15,Angela Brooks,General Manager,Management,overhead,86.7,4083.33,387.92
+2025-11-15,Brian Choi,Install Tech,Field Techs,direct,341.9,13936.29,1323.95
+2025-11-15,Carlos Mendez,Service Tech,Field Techs,direct,139.0,5656.77,537.39
+2025-11-15,Chloe Martin,Marketing Manager,Marketing,overhead,86.7,2583.33,245.42
+2025-11-15,Danny Ortiz,Service Tech,Field Techs,direct,105.9,4316.56,410.07
+2025-11-15,Dee Ramsey,Fleet & Safety Coordinator,Operations,overhead,86.7,1916.67,182.08
+2025-11-15,Eli Torres,Install Helper,Install Crew,overhead,86.7,1958.33,186.04
+2025-11-15,Greg Sandoval,Comfort Advisor (Sales),Sales,overhead,86.7,2833.33,269.17
+2025-11-15,Harold Finch,Bookkeeper,Office,overhead,86.7,2416.67,229.58
+2025-11-15,Jake Sullivan,Install Lead,Field Techs,direct,60.9,2482.99,235.88
+2025-11-15,Jessica Lowe,CSR,Office,overhead,86.7,1750.0,166.25
+2025-11-15,Josh Whelan,Install Helper,Install Crew,overhead,86.7,1916.67,182.08
+2025-11-15,Kevin Brandt,Service Tech,Field Techs,direct,186.8,7616.5,723.57
+2025-11-15,Luis Herrera,Service Tech,Field Techs,direct,75.5,3074.28,292.06
+2025-11-15,Marcus Reyes,Senior Service Tech,Field Techs,direct,73.2,2981.32,283.23
+2025-11-15,Mike Dunlap,Service Manager,Operations,overhead,86.7,3000.0,285.0
+2025-11-15,Monica Reyes,CSR,Office,overhead,86.7,1708.33,162.29
+2025-11-15,Nina Patel,Comfort Advisor (Sales),Sales,overhead,86.7,2666.67,253.33
+2025-11-15,Priya Nair,Dispatcher,Operations,overhead,86.7,1916.67,182.08
+2025-11-15,Ray Thompson,Duct Crew Lead,Field Techs,direct,174.8,7125.83,676.95
+2025-11-15,Rosa Medina,Membership Coordinator,Office,overhead,86.7,1791.67,170.21
+2025-11-15,Sam Delgado,Service Tech,Field Techs,direct,95.9,3907.76,371.24
+2025-11-15,Tom Whitfield,Owner,Management,overhead,86.7,5000.0,475.0
+2025-11-15,Tyrone Jackson,Service Tech,Field Techs,direct,100.7,4106.55,390.12
+2025-11-15,Victor Alvarez,Install Lead,Field Techs,direct,184.1,7504.19,712.9
+2025-11-15,Walt Henderson,Warehouse / Parts,Operations,overhead,86.7,1833.33,174.17
+2025-11-30,Aaron Pike,Service Tech,Field Techs,direct,82.1,3348.33,318.09
+2025-11-30,Andre Wilkins,Install Helper,Install Crew,overhead,86.7,1979.17,188.02
+2025-11-30,Angela Brooks,General Manager,Management,overhead,86.7,4083.33,387.92
+2025-11-30,Brian Choi,Install Tech,Field Techs,direct,282.9,11532.79,1095.62
+2025-11-30,Carlos Mendez,Service Tech,Field Techs,direct,73.8,3009.53,285.9
+2025-11-30,Chloe Martin,Marketing Manager,Marketing,overhead,86.7,2583.33,245.42
+2025-11-30,Danny Ortiz,Service Tech,Field Techs,direct,123.0,5012.84,476.22
+2025-11-30,Dee Ramsey,Fleet & Safety Coordinator,Operations,overhead,86.7,1916.67,182.08
+2025-11-30,Eli Torres,Install Helper,Install Crew,overhead,86.7,1958.33,186.04
+2025-11-30,Greg Sandoval,Comfort Advisor (Sales),Sales,overhead,86.7,2833.33,269.17
+2025-11-30,Harold Finch,Bookkeeper,Office,overhead,86.7,2416.67,229.58
+2025-11-30,Jake Sullivan,Install Lead,Field Techs,direct,155.6,6342.31,602.52
+2025-11-30,Jessica Lowe,CSR,Office,overhead,86.7,1750.0,166.25
+2025-11-30,Josh Whelan,Install Helper,Install Crew,overhead,86.7,1916.67,182.08
+2025-11-30,Kevin Brandt,Service Tech,Field Techs,direct,110.1,4490.42,426.59
+2025-11-30,Luis Herrera,Service Tech,Field Techs,direct,47.6,1933.42,183.67
+2025-11-30,Marcus Reyes,Senior Service Tech,Field Techs,direct,87.6,3573.13,339.45
+2025-11-30,Mike Dunlap,Service Manager,Operations,overhead,86.7,3000.0,285.0
+2025-11-30,Monica Reyes,CSR,Office,overhead,86.7,1708.33,162.29
+2025-11-30,Nina Patel,Comfort Advisor (Sales),Sales,overhead,86.7,2666.67,253.33
+2025-11-30,Priya Nair,Dispatcher,Operations,overhead,86.7,1916.67,182.08
+2025-11-30,Ray Thompson,Duct Crew Lead,Field Techs,direct,104.1,4243.97,403.18
+2025-11-30,Rosa Medina,Membership Coordinator,Office,overhead,86.7,1791.67,170.21
+2025-11-30,Sam Delgado,Service Tech,Field Techs,direct,49.8,2030.39,192.89
+2025-11-30,Tom Whitfield,Owner,Management,overhead,86.7,5000.0,475.0
+2025-11-30,Tyrone Jackson,Service Tech,Field Techs,direct,49.4,2012.79,191.22
+2025-11-30,Victor Alvarez,Install Lead,Field Techs,direct,52.8,2154.55,204.68
+2025-11-30,Walt Henderson,Warehouse / Parts,Operations,overhead,86.7,1833.33,174.17
+2025-12-15,Aaron Pike,Service Tech,Field Techs,direct,60.2,2455.38,233.26
+2025-12-15,Andre Wilkins,Install Helper,Install Crew,overhead,86.7,1979.17,188.02
+2025-12-15,Angela Brooks,General Manager,Management,overhead,86.7,4083.33,387.92
+2025-12-15,Brian Choi,Install Tech,Field Techs,direct,159.9,6518.24,619.23
+2025-12-15,Carlos Mendez,Service Tech,Field Techs,direct,116.9,4764.3,452.61
+2025-12-15,Chloe Martin,Marketing Manager,Marketing,overhead,86.7,2583.33,245.42
+2025-12-15,Danny Ortiz,Service Tech,Field Techs,direct,78.5,3197.42,303.76
+2025-12-15,Dee Ramsey,Fleet & Safety Coordinator,Operations,overhead,86.7,1916.67,182.08
+2025-12-15,Eli Torres,Install Helper,Install Crew,overhead,86.7,1958.33,186.04
+2025-12-15,Greg Sandoval,Comfort Advisor (Sales),Sales,overhead,86.7,2833.33,269.17
+2025-12-15,Harold Finch,Bookkeeper,Office,overhead,86.7,2416.67,229.58
+2025-12-15,Jake Sullivan,Install Lead,Field Techs,direct,113.8,4637.45,440.56
+2025-12-15,Jessica Lowe,CSR,Office,overhead,86.7,1750.0,166.25
+2025-12-15,Josh Whelan,Install Helper,Install Crew,overhead,86.7,1916.67,182.08
+2025-12-15,Kevin Brandt,Service Tech,Field Techs,direct,46.4,1891.38,179.68
+2025-12-15,Luis Herrera,Service Tech,Field Techs,direct,76.8,3124.29,296.81
+2025-12-15,Marcus Reyes,Senior Service Tech,Field Techs,direct,119.2,4858.4,461.55
+2025-12-15,Mike Dunlap,Service Manager,Operations,overhead,86.7,3000.0,285.0
+2025-12-15,Monica Reyes,CSR,Office,overhead,86.7,1708.33,162.29
+2025-12-15,Nina Patel,Comfort Advisor (Sales),Sales,overhead,86.7,2666.67,253.33
+2025-12-15,Priya Nair,Dispatcher,Operations,overhead,86.7,1916.67,182.08
+2025-12-15,Ray Thompson,Duct Crew Lead,Field Techs,direct,176.0,7173.81,681.51
+2025-12-15,Rosa Medina,Membership Coordinator,Office,overhead,86.7,1791.67,170.21
+2025-12-15,Sam Delgado,Service Tech,Field Techs,direct,141.3,5753.74,546.6
+2025-12-15,Tom Whitfield,Owner,Management,overhead,86.7,5000.0,475.0
+2025-12-15,Tyrone Jackson,Service Tech,Field Techs,direct,84.3,3436.62,326.48
+2025-12-15,Victor Alvarez,Install Lead,Field Techs,direct,89.3,3641.02,345.9
+2025-12-15,Walt Henderson,Warehouse / Parts,Operations,overhead,86.7,1833.33,174.17
+2025-12-31,Aaron Pike,Service Tech,Field Techs,direct,60.9,2481.6,235.75
+2025-12-31,Andre Wilkins,Install Helper,Install Crew,overhead,86.7,1979.17,188.02
+2025-12-31,Angela Brooks,General Manager,Management,overhead,86.7,4083.33,387.92
+2025-12-31,Brian Choi,Install Tech,Field Techs,direct,84.2,3433.73,326.2
+2025-12-31,Carlos Mendez,Service Tech,Field Techs,direct,149.1,6066.01,576.27
+2025-12-31,Chloe Martin,Marketing Manager,Marketing,overhead,86.7,2583.33,245.42
+2025-12-31,Danny Ortiz,Service Tech,Field Techs,direct,72.9,2972.04,282.34
+2025-12-31,Dee Ramsey,Fleet & Safety Coordinator,Operations,overhead,86.7,1916.67,182.08
+2025-12-31,Eli Torres,Install Helper,Install Crew,overhead,86.7,1958.33,186.04
+2025-12-31,Greg Sandoval,Comfort Advisor (Sales),Sales,overhead,86.7,2833.33,269.17
+2025-12-31,Harold Finch,Bookkeeper,Office,overhead,86.7,2416.67,229.58
+2025-12-31,Jake Sullivan,Install Lead,Field Techs,direct,40.0,1800.0,171.0
+2025-12-31,Jessica Lowe,CSR,Office,overhead,86.7,1750.0,166.25
+2025-12-31,Josh Whelan,Install Helper,Install Crew,overhead,86.7,1916.67,182.08
+2025-12-31,Kevin Brandt,Service Tech,Field Techs,direct,150.5,6135.27,582.85
+2025-12-31,Luis Herrera,Service Tech,Field Techs,direct,43.0,1800.0,171.0
+2025-12-31,Marcus Reyes,Senior Service Tech,Field Techs,direct,111.0,4525.99,429.97
+2025-12-31,Mike Dunlap,Service Manager,Operations,overhead,86.7,3000.0,285.0
+2025-12-31,Monica Reyes,CSR,Office,overhead,86.7,1708.33,162.29
+2025-12-31,Nina Patel,Comfort Advisor (Sales),Sales,overhead,86.7,2666.67,253.33
+2025-12-31,Priya Nair,Dispatcher,Operations,overhead,86.7,1916.67,182.08
+2025-12-31,Ray Thompson,Duct Crew Lead,Field Techs,direct,136.0,5544.3,526.71
+2025-12-31,Rosa Medina,Membership Coordinator,Office,overhead,86.7,1791.67,170.21
+2025-12-31,Sam Delgado,Service Tech,Field Techs,direct,134.7,5491.84,521.73
+2025-12-31,Tom Whitfield,Owner,Management,overhead,86.7,5000.0,475.0
+2025-12-31,Tyrone Jackson,Service Tech,Field Techs,direct,50.4,2048.84,194.64
+2025-12-31,Victor Alvarez,Install Lead,Field Techs,direct,40.0,1800.0,171.0
+2025-12-31,Walt Henderson,Warehouse / Parts,Operations,overhead,86.7,1833.33,174.17
+2026-01-15,Aaron Pike,Service Tech,Field Techs,direct,85.5,3484.32,331.01
+2026-01-15,Andre Wilkins,Install Helper,Install Crew,overhead,86.7,1979.17,188.02
+2026-01-15,Angela Brooks,General Manager,Management,overhead,86.7,4083.33,387.92
+2026-01-15,Brian Choi,Install Tech,Field Techs,direct,239.2,9751.68,926.41
+2026-01-15,Carlos Mendez,Service Tech,Field Techs,direct,130.9,5335.06,506.83
+2026-01-15,Chloe Martin,Marketing Manager,Marketing,overhead,86.7,2583.33,245.42
+2026-01-15,Danny Ortiz,Service Tech,Field Techs,direct,46.0,1862.7,176.96
+2026-01-15,Dee Ramsey,Fleet & Safety Coordinator,Operations,overhead,86.7,1916.67,182.08
+2026-01-15,Eli Torres,Install Helper,Install Crew,overhead,86.7,1958.33,186.04
+2026-01-15,Greg Sandoval,Comfort Advisor (Sales),Sales,overhead,86.7,2833.33,269.17
+2026-01-15,Harold Finch,Bookkeeper,Office,overhead,86.7,2416.67,229.58
+2026-01-15,Jake Sullivan,Install Lead,Field Techs,direct,87.8,3581.1,340.2
+2026-01-15,Jessica Lowe,CSR,Office,overhead,86.7,1750.0,166.25
+2026-01-15,Josh Whelan,Install Helper,Install Crew,overhead,86.7,1916.67,182.08
+2026-01-15,Kevin Brandt,Service Tech,Field Techs,direct,43.2,1800.0,171.0
+2026-01-15,Luis Herrera,Service Tech,Field Techs,direct,59.7,2432.2,231.06
+2026-01-15,Marcus Reyes,Senior Service Tech,Field Techs,direct,88.7,3615.55,343.48
+2026-01-15,Mike Dunlap,Service Manager,Operations,overhead,86.7,3000.0,285.0
+2026-01-15,Monica Reyes,CSR,Office,overhead,86.7,1708.33,162.29
+2026-01-15,Nina Patel,Comfort Advisor (Sales),Sales,overhead,86.7,2666.67,253.33
+2026-01-15,Priya Nair,Dispatcher,Operations,overhead,86.7,1916.67,182.08
+2026-01-15,Ray Thompson,Duct Crew Lead,Field Techs,direct,205.3,8370.32,795.18
+2026-01-15,Rosa Medina,Membership Coordinator,Office,overhead,86.7,1791.67,170.21
+2026-01-15,Sam Delgado,Service Tech,Field Techs,direct,128.4,5235.89,497.41
+2026-01-15,Tom Whitfield,Owner,Management,overhead,86.7,5000.0,475.0
+2026-01-15,Tyrone Jackson,Service Tech,Field Techs,direct,65.7,2677.83,254.39
+2026-01-15,Victor Alvarez,Install Lead,Field Techs,direct,44.6,1817.84,172.69
+2026-01-15,Walt Henderson,Warehouse / Parts,Operations,overhead,86.7,1833.33,174.17
+2026-01-31,Aaron Pike,Service Tech,Field Techs,direct,47.4,1931.58,183.5
+2026-01-31,Andre Wilkins,Install Helper,Install Crew,overhead,86.7,1979.17,188.02
+2026-01-31,Angela Brooks,General Manager,Management,overhead,86.7,4083.33,387.92
+2026-01-31,Brian Choi,Install Tech,Field Techs,direct,167.3,6818.92,647.8
+2026-01-31,Carlos Mendez,Service Tech,Field Techs,direct,144.1,5876.72,558.29
+2026-01-31,Chloe Martin,Marketing Manager,Marketing,overhead,86.7,2583.33,245.42
+2026-01-31,Danny Ortiz,Service Tech,Field Techs,direct,106.2,4327.55,411.12
+2026-01-31,Dee Ramsey,Fleet & Safety Coordinator,Operations,overhead,86.7,1916.67,182.08
+2026-01-31,Eli Torres,Install Helper,Install Crew,overhead,86.7,1958.33,186.04
+2026-01-31,Greg Sandoval,Comfort Advisor (Sales),Sales,overhead,86.7,2833.33,269.17
+2026-01-31,Harold Finch,Bookkeeper,Office,overhead,86.7,2416.67,229.58
+2026-01-31,Jake Sullivan,Install Lead,Field Techs,direct,255.1,10401.21,988.11
+2026-01-31,Jessica Lowe,CSR,Office,overhead,86.7,1750.0,166.25
+2026-01-31,Josh Whelan,Install Helper,Install Crew,overhead,86.7,1916.67,182.08
+2026-01-31,Kevin Brandt,Service Tech,Field Techs,direct,116.0,4730.12,449.36
+2026-01-31,Luis Herrera,Service Tech,Field Techs,direct,68.0,2771.52,263.29
+2026-01-31,Marcus Reyes,Senior Service Tech,Field Techs,direct,99.2,4044.28,384.21
+2026-01-31,Mike Dunlap,Service Manager,Operations,overhead,86.7,3000.0,285.0
+2026-01-31,Monica Reyes,CSR,Office,overhead,86.7,1708.33,162.29
+2026-01-31,Nina Patel,Comfort Advisor (Sales),Sales,overhead,86.7,2666.67,253.33
+2026-01-31,Priya Nair,Dispatcher,Operations,overhead,86.7,1916.67,182.08
+2026-01-31,Ray Thompson,Duct Crew Lead,Field Techs,direct,121.5,4951.42,470.39
+2026-01-31,Rosa Medina,Membership Coordinator,Office,overhead,86.7,1791.67,170.21
+2026-01-31,Sam Delgado,Service Tech,Field Techs,direct,107.7,4383.5,416.43
+2026-01-31,Tom Whitfield,Owner,Management,overhead,86.7,5000.0,475.0
+2026-01-31,Tyrone Jackson,Service Tech,Field Techs,direct,74.7,3044.92,289.27
+2026-01-31,Victor Alvarez,Install Lead,Field Techs,direct,152.0,6196.21,588.64
+2026-01-31,Walt Henderson,Warehouse / Parts,Operations,overhead,86.7,1833.33,174.17
+2026-02-15,Aaron Pike,Service Tech,Field Techs,direct,64.0,2611.32,248.08
+2026-02-15,Andre Wilkins,Install Helper,Install Crew,overhead,86.7,1979.17,188.02
+2026-02-15,Angela Brooks,General Manager,Management,overhead,86.7,4083.33,387.92
+2026-02-15,Brian Choi,Install Tech,Field Techs,direct,96.1,3917.4,372.15
+2026-02-15,Carlos Mendez,Service Tech,Field Techs,direct,127.1,5181.31,492.22
+2026-02-15,Chloe Martin,Marketing Manager,Marketing,overhead,86.7,2583.33,245.42
+2026-02-15,Danny Ortiz,Service Tech,Field Techs,direct,76.8,3132.53,297.59
+2026-02-15,Dee Ramsey,Fleet & Safety Coordinator,Operations,overhead,86.7,1916.67,182.08
+2026-02-15,Eli Torres,Install Helper,Install Crew,overhead,86.7,1958.33,186.04
+2026-02-15,Greg Sandoval,Comfort Advisor (Sales),Sales,overhead,86.7,2833.33,269.17
+2026-02-15,Harold Finch,Bookkeeper,Office,overhead,86.7,2416.67,229.58
+2026-02-15,Jake Sullivan,Install Lead,Field Techs,direct,40.0,1800.0,171.0
+2026-02-15,Jessica Lowe,CSR,Office,overhead,86.7,1750.0,166.25
+2026-02-15,Josh Whelan,Install Helper,Install Crew,overhead,86.7,1916.67,182.08
+2026-02-15,Kevin Brandt,Service Tech,Field Techs,direct,128.6,5240.39,497.84
+2026-02-15,Luis Herrera,Service Tech,Field Techs,direct,65.2,2660.18,252.72
+2026-02-15,Marcus Reyes,Senior Service Tech,Field Techs,direct,164.8,6719.83,638.38
+2026-02-15,Mike Dunlap,Service Manager,Operations,overhead,86.7,3000.0,285.0
+2026-02-15,Monica Reyes,CSR,Office,overhead,86.7,1708.33,162.29
+2026-02-15,Nina Patel,Comfort Advisor (Sales),Sales,overhead,86.7,2666.67,253.33
+2026-02-15,Priya Nair,Dispatcher,Operations,overhead,86.7,1916.67,182.08
+2026-02-15,Ray Thompson,Duct Crew Lead,Field Techs,direct,158.2,6448.99,612.65
+2026-02-15,Rosa Medina,Membership Coordinator,Office,overhead,86.7,1791.67,170.21
+2026-02-15,Sam Delgado,Service Tech,Field Techs,direct,134.1,5467.81,519.44
+2026-02-15,Tom Whitfield,Owner,Management,overhead,86.7,5000.0,475.0
+2026-02-15,Tyrone Jackson,Service Tech,Field Techs,direct,65.3,2660.51,252.75
+2026-02-15,Victor Alvarez,Install Lead,Field Techs,direct,53.0,2159.47,205.15
+2026-02-15,Walt Henderson,Warehouse / Parts,Operations,overhead,86.7,1833.33,174.17
+2026-02-28,Aaron Pike,Service Tech,Field Techs,direct,41.5,1800.0,171.0
+2026-02-28,Andre Wilkins,Install Helper,Install Crew,overhead,86.7,1979.17,188.02
+2026-02-28,Angela Brooks,General Manager,Management,overhead,86.7,4083.33,387.92
+2026-02-28,Brian Choi,Install Tech,Field Techs,direct,84.4,3440.42,326.84
+2026-02-28,Carlos Mendez,Service Tech,Field Techs,direct,119.7,4879.21,463.52
+2026-02-28,Chloe Martin,Marketing Manager,Marketing,overhead,86.7,2583.33,245.42
+2026-02-28,Danny Ortiz,Service Tech,Field Techs,direct,55.6,2265.08,215.18
+2026-02-28,Dee Ramsey,Fleet & Safety Coordinator,Operations,overhead,86.7,1916.67,182.08
+2026-02-28,Eli Torres,Install Helper,Install Crew,overhead,86.7,1958.33,186.04
+2026-02-28,Greg Sandoval,Comfort Advisor (Sales),Sales,overhead,86.7,2833.33,269.17
+2026-02-28,Harold Finch,Bookkeeper,Office,overhead,86.7,2416.67,229.58
+2026-02-28,Jake Sullivan,Install Lead,Field Techs,direct,73.7,3004.54,285.43
+2026-02-28,Jessica Lowe,CSR,Office,overhead,86.7,1750.0,166.25
+2026-02-28,Josh Whelan,Install Helper,Install Crew,overhead,86.7,1916.67,182.08
+2026-02-28,Kevin Brandt,Service Tech,Field Techs,direct,125.7,5121.74,486.56
+2026-02-28,Luis Herrera,Service Tech,Field Techs,direct,69.2,2813.03,267.24
+2026-02-28,Marcus Reyes,Senior Service Tech,Field Techs,direct,91.0,3704.94,351.97
+2026-02-28,Mike Dunlap,Service Manager,Operations,overhead,86.7,3000.0,285.0
+2026-02-28,Monica Reyes,CSR,Office,overhead,86.7,1708.33,162.29
+2026-02-28,Nina Patel,Comfort Advisor (Sales),Sales,overhead,86.7,2666.67,253.33
+2026-02-28,Priya Nair,Dispatcher,Operations,overhead,86.7,1916.67,182.08
+2026-02-28,Ray Thompson,Duct Crew Lead,Field Techs,direct,108.8,4433.34,421.17
+2026-02-28,Rosa Medina,Membership Coordinator,Office,overhead,86.7,1791.67,170.21
+2026-02-28,Sam Delgado,Service Tech,Field Techs,direct,61.8,2518.26,239.24
+2026-02-28,Tom Whitfield,Owner,Management,overhead,86.7,5000.0,475.0
+2026-02-28,Tyrone Jackson,Service Tech,Field Techs,direct,40.0,1800.0,171.0
+2026-02-28,Victor Alvarez,Install Lead,Field Techs,direct,95.7,3902.52,370.74
+2026-02-28,Walt Henderson,Warehouse / Parts,Operations,overhead,86.7,1833.33,174.17
+2026-03-15,Aaron Pike,Service Tech,Field Techs,direct,40.0,1800.0,171.0
+2026-03-15,Andre Wilkins,Install Helper,Install Crew,overhead,86.7,1979.17,188.02
+2026-03-15,Angela Brooks,General Manager,Management,overhead,86.7,4083.33,387.92
+2026-03-15,Brian Choi,Install Tech,Field Techs,direct,49.3,2008.75,190.83
+2026-03-15,Carlos Mendez,Service Tech,Field Techs,direct,129.5,5280.89,501.69
+2026-03-15,Chloe Martin,Marketing Manager,Marketing,overhead,86.7,2583.33,245.42
+2026-03-15,Danny Ortiz,Service Tech,Field Techs,direct,172.2,7022.23,667.11
+2026-03-15,Dee Ramsey,Fleet & Safety Coordinator,Operations,overhead,86.7,1916.67,182.08
+2026-03-15,Eli Torres,Install Helper,Install Crew,overhead,86.7,1958.33,186.04
+2026-03-15,Greg Sandoval,Comfort Advisor (Sales),Sales,overhead,86.7,2833.33,269.17
+2026-03-15,Harold Finch,Bookkeeper,Office,overhead,86.7,2416.67,229.58
+2026-03-15,Jake Sullivan,Install Lead,Field Techs,direct,319.0,13003.09,1235.29
+2026-03-15,Jessica Lowe,CSR,Office,overhead,86.7,1750.0,166.25
+2026-03-15,Josh Whelan,Install Helper,Install Crew,overhead,86.7,1916.67,182.08
+2026-03-15,Kevin Brandt,Service Tech,Field Techs,direct,71.7,2920.32,277.43
+2026-03-15,Luis Herrera,Service Tech,Field Techs,direct,84.8,3455.78,328.3
+2026-03-15,Marcus Reyes,Senior Service Tech,Field Techs,direct,117.6,4793.8,455.41
+2026-03-15,Mike Dunlap,Service Manager,Operations,overhead,86.7,3000.0,285.0
+2026-03-15,Monica Reyes,CSR,Office,overhead,86.7,1708.33,162.29
+2026-03-15,Nina Patel,Comfort Advisor (Sales),Sales,overhead,86.7,2666.67,253.33
+2026-03-15,Priya Nair,Dispatcher,Operations,overhead,86.7,1916.67,182.08
+2026-03-15,Ray Thompson,Duct Crew Lead,Field Techs,direct,120.8,4922.55,467.64
+2026-03-15,Rosa Medina,Membership Coordinator,Office,overhead,86.7,1791.67,170.21
+2026-03-15,Sam Delgado,Service Tech,Field Techs,direct,77.0,3138.22,298.13
+2026-03-15,Tom Whitfield,Owner,Management,overhead,86.7,5000.0,475.0
+2026-03-15,Tyrone Jackson,Service Tech,Field Techs,direct,83.1,3386.79,321.75
+2026-03-15,Victor Alvarez,Install Lead,Field Techs,direct,65.1,2653.89,252.12
+2026-03-15,Walt Henderson,Warehouse / Parts,Operations,overhead,86.7,1833.33,174.17
+2026-03-31,Aaron Pike,Service Tech,Field Techs,direct,92.7,3775.82,358.7
+2026-03-31,Andre Wilkins,Install Helper,Install Crew,overhead,86.7,1979.17,188.02
+2026-03-31,Angela Brooks,General Manager,Management,overhead,86.7,4083.33,387.92
+2026-03-31,Brian Choi,Install Tech,Field Techs,direct,45.9,1871.72,177.81
+2026-03-31,Carlos Mendez,Service Tech,Field Techs,direct,121.6,4956.18,470.84
+2026-03-31,Chloe Martin,Marketing Manager,Marketing,overhead,86.7,2583.33,245.42
+2026-03-31,Danny Ortiz,Service Tech,Field Techs,direct,148.9,6057.34,575.45
+2026-03-31,Dee Ramsey,Fleet & Safety Coordinator,Operations,overhead,86.7,1916.67,182.08
+2026-03-31,Eli Torres,Install Helper,Install Crew,overhead,86.7,1958.33,186.04
+2026-03-31,Greg Sandoval,Comfort Advisor (Sales),Sales,overhead,86.7,2833.33,269.17
+2026-03-31,Harold Finch,Bookkeeper,Office,overhead,86.7,2416.67,229.58
+2026-03-31,Jake Sullivan,Install Lead,Field Techs,direct,95.7,3899.18,370.42
+2026-03-31,Jessica Lowe,CSR,Office,overhead,86.7,1750.0,166.25
+2026-03-31,Josh Whelan,Install Helper,Install Crew,overhead,86.7,1916.67,182.08
+2026-03-31,Kevin Brandt,Service Tech,Field Techs,direct,93.0,3791.1,360.15
+2026-03-31,Luis Herrera,Service Tech,Field Techs,direct,49.5,2017.86,191.7
+2026-03-31,Marcus Reyes,Senior Service Tech,Field Techs,direct,117.6,4796.03,455.62
+2026-03-31,Mike Dunlap,Service Manager,Operations,overhead,86.7,3000.0,285.0
+2026-03-31,Monica Reyes,CSR,Office,overhead,86.7,1708.33,162.29
+2026-03-31,Nina Patel,Comfort Advisor (Sales),Sales,overhead,86.7,2666.67,253.33
+2026-03-31,Priya Nair,Dispatcher,Operations,overhead,86.7,1916.67,182.08
+2026-03-31,Ray Thompson,Duct Crew Lead,Field Techs,direct,156.5,6380.81,606.18
+2026-03-31,Rosa Medina,Membership Coordinator,Office,overhead,86.7,1791.67,170.21
+2026-03-31,Sam Delgado,Service Tech,Field Techs,direct,156.3,6374.79,605.6
+2026-03-31,Tom Whitfield,Owner,Management,overhead,86.7,5000.0,475.0
+2026-03-31,Tyrone Jackson,Service Tech,Field Techs,direct,77.2,3146.23,298.89
+2026-03-31,Victor Alvarez,Install Lead,Field Techs,direct,224.8,9165.43,870.72
+2026-03-31,Walt Henderson,Warehouse / Parts,Operations,overhead,86.7,1833.33,174.17
+2026-04-15,Aaron Pike,Service Tech,Field Techs,direct,131.1,5343.74,507.66
+2026-04-15,Andre Wilkins,Install Helper,Install Crew,overhead,86.7,1979.17,188.02
+2026-04-15,Angela Brooks,General Manager,Management,overhead,86.7,4083.33,387.92
+2026-04-15,Brian Choi,Install Tech,Field Techs,direct,130.7,5327.33,506.1
+2026-04-15,Carlos Mendez,Service Tech,Field Techs,direct,130.3,5311.83,504.62
+2026-04-15,Chloe Martin,Marketing Manager,Marketing,overhead,86.7,2583.33,245.42
+2026-04-15,Danny Ortiz,Service Tech,Field Techs,direct,160.1,6521.54,619.55
+2026-04-15,Dee Ramsey,Fleet & Safety Coordinator,Operations,overhead,86.7,1916.67,182.08
+2026-04-15,Eli Torres,Install Helper,Install Crew,overhead,86.7,1958.33,186.04
+2026-04-15,Greg Sandoval,Comfort Advisor (Sales),Sales,overhead,86.7,2833.33,269.17
+2026-04-15,Harold Finch,Bookkeeper,Office,overhead,86.7,2416.67,229.58
+2026-04-15,Jake Sullivan,Install Lead,Field Techs,direct,94.2,3839.74,364.78
+2026-04-15,Jessica Lowe,CSR,Office,overhead,86.7,1750.0,166.25
+2026-04-15,Josh Whelan,Install Helper,Install Crew,overhead,86.7,1916.67,182.08
+2026-04-15,Kevin Brandt,Service Tech,Field Techs,direct,77.9,3167.46,300.91
+2026-04-15,Luis Herrera,Service Tech,Field Techs,direct,89.6,3650.78,346.82
+2026-04-15,Marcus Reyes,Senior Service Tech,Field Techs,direct,246.6,10051.81,954.92
+2026-04-15,Mike Dunlap,Service Manager,Operations,overhead,86.7,3000.0,285.0
+2026-04-15,Monica Reyes,CSR,Office,overhead,86.7,1708.33,162.29
+2026-04-15,Nina Patel,Comfort Advisor (Sales),Sales,overhead,86.7,2666.67,253.33
+2026-04-15,Priya Nair,Dispatcher,Operations,overhead,86.7,1916.67,182.08
+2026-04-15,Ray Thompson,Duct Crew Lead,Field Techs,direct,193.1,7872.84,747.92
+2026-04-15,Rosa Medina,Membership Coordinator,Office,overhead,86.7,1791.67,170.21
+2026-04-15,Sam Delgado,Service Tech,Field Techs,direct,129.9,5279.22,501.53
+2026-04-15,Tom Whitfield,Owner,Management,overhead,86.7,5000.0,475.0
+2026-04-15,Tyrone Jackson,Service Tech,Field Techs,direct,77.3,3153.21,299.56
+2026-04-15,Victor Alvarez,Install Lead,Field Techs,direct,160.8,6554.89,622.72
+2026-04-15,Walt Henderson,Warehouse / Parts,Operations,overhead,86.7,1833.33,174.17
+2026-04-30,Aaron Pike,Service Tech,Field Techs,direct,80.9,3298.15,313.32
+2026-04-30,Andre Wilkins,Install Helper,Install Crew,overhead,86.7,1979.17,188.02
+2026-04-30,Angela Brooks,General Manager,Management,overhead,86.7,4083.33,387.92
+2026-04-30,Brian Choi,Install Tech,Field Techs,direct,40.0,1800.0,171.0
+2026-04-30,Carlos Mendez,Service Tech,Field Techs,direct,166.4,6784.57,644.53
+2026-04-30,Chloe Martin,Marketing Manager,Marketing,overhead,86.7,2583.33,245.42
+2026-04-30,Danny Ortiz,Service Tech,Field Techs,direct,113.8,4631.63,440.0
+2026-04-30,Dee Ramsey,Fleet & Safety Coordinator,Operations,overhead,86.7,1916.67,182.08
+2026-04-30,Eli Torres,Install Helper,Install Crew,overhead,86.7,1958.33,186.04
+2026-04-30,Greg Sandoval,Comfort Advisor (Sales),Sales,overhead,86.7,2833.33,269.17
+2026-04-30,Harold Finch,Bookkeeper,Office,overhead,86.7,2416.67,229.58
+2026-04-30,Jake Sullivan,Install Lead,Field Techs,direct,73.6,3001.48,285.14
+2026-04-30,Jessica Lowe,CSR,Office,overhead,86.7,1750.0,166.25
+2026-04-30,Josh Whelan,Install Helper,Install Crew,overhead,86.7,1916.67,182.08
+2026-04-30,Kevin Brandt,Service Tech,Field Techs,direct,144.8,5904.94,560.97
+2026-04-30,Luis Herrera,Service Tech,Field Techs,direct,62.5,2542.8,241.57
+2026-04-30,Marcus Reyes,Senior Service Tech,Field Techs,direct,176.8,7208.85,684.84
+2026-04-30,Mike Dunlap,Service Manager,Operations,overhead,86.7,3000.0,285.0
+2026-04-30,Monica Reyes,CSR,Office,overhead,86.7,1708.33,162.29
+2026-04-30,Nina Patel,Comfort Advisor (Sales),Sales,overhead,86.7,2666.67,253.33
+2026-04-30,Priya Nair,Dispatcher,Operations,overhead,86.7,1916.67,182.08
+2026-04-30,Ray Thompson,Duct Crew Lead,Field Techs,direct,212.6,8666.23,823.29
+2026-04-30,Rosa Medina,Membership Coordinator,Office,overhead,86.7,1791.67,170.21
+2026-04-30,Sam Delgado,Service Tech,Field Techs,direct,94.7,3853.61,366.09
+2026-04-30,Tom Whitfield,Owner,Management,overhead,86.7,5000.0,475.0
+2026-04-30,Tyrone Jackson,Service Tech,Field Techs,direct,85.3,3478.64,330.47
+2026-04-30,Victor Alvarez,Install Lead,Field Techs,direct,125.6,5118.15,486.22
+2026-04-30,Walt Henderson,Warehouse / Parts,Operations,overhead,86.7,1833.33,174.17
+2026-05-15,Aaron Pike,Service Tech,Field Techs,direct,78.9,3219.17,305.82
+2026-05-15,Andre Wilkins,Install Helper,Install Crew,overhead,86.7,1979.17,188.02
+2026-05-15,Angela Brooks,General Manager,Management,overhead,86.7,4083.33,387.92
+2026-05-15,Brian Choi,Install Tech,Field Techs,direct,52.6,2144.58,203.73
+2026-05-15,Carlos Mendez,Service Tech,Field Techs,direct,138.0,5625.32,534.41
+2026-05-15,Chloe Martin,Marketing Manager,Marketing,overhead,86.7,2583.33,245.42
+2026-05-15,Danny Ortiz,Service Tech,Field Techs,direct,169.0,6878.03,653.41
+2026-05-15,Dee Ramsey,Fleet & Safety Coordinator,Operations,overhead,86.7,1916.67,182.08
+2026-05-15,Eli Torres,Install Helper,Install Crew,overhead,86.7,1958.33,186.04
+2026-05-15,Greg Sandoval,Comfort Advisor (Sales),Sales,overhead,86.7,2833.33,269.17
+2026-05-15,Harold Finch,Bookkeeper,Office,overhead,86.7,2416.67,229.58
+2026-05-15,Jake Sullivan,Install Lead,Field Techs,direct,413.7,16864.28,1602.11
+2026-05-15,Jessica Lowe,CSR,Office,overhead,86.7,1750.0,166.25
+2026-05-15,Josh Whelan,Install Helper,Install Crew,overhead,86.7,1916.67,182.08
+2026-05-15,Kevin Brandt,Service Tech,Field Techs,direct,144.6,5890.62,559.61
+2026-05-15,Luis Herrera,Service Tech,Field Techs,direct,91.3,3722.29,353.62
+2026-05-15,Marcus Reyes,Senior Service Tech,Field Techs,direct,180.8,7371.74,700.31
+2026-05-15,Mike Dunlap,Service Manager,Operations,overhead,86.7,3000.0,285.0
+2026-05-15,Monica Reyes,CSR,Office,overhead,86.7,1708.33,162.29
+2026-05-15,Nina Patel,Comfort Advisor (Sales),Sales,overhead,86.7,2666.67,253.33
+2026-05-15,Priya Nair,Dispatcher,Operations,overhead,86.7,1916.67,182.08
+2026-05-15,Ray Thompson,Duct Crew Lead,Field Techs,direct,109.1,4448.06,422.57
+2026-05-15,Rosa Medina,Membership Coordinator,Office,overhead,86.7,1791.67,170.21
+2026-05-15,Sam Delgado,Service Tech,Field Techs,direct,111.7,4552.86,432.52
+2026-05-15,Tom Whitfield,Owner,Management,overhead,86.7,5000.0,475.0
+2026-05-15,Tyrone Jackson,Service Tech,Field Techs,direct,115.4,4706.65,447.13
+2026-05-15,Victor Alvarez,Install Lead,Field Techs,direct,243.9,9942.08,944.5
+2026-05-15,Walt Henderson,Warehouse / Parts,Operations,overhead,86.7,1833.33,174.17
+2026-05-31,Aaron Pike,Service Tech,Field Techs,direct,146.0,5949.85,565.24
+2026-05-31,Andre Wilkins,Install Helper,Install Crew,overhead,86.7,1979.17,188.02
+2026-05-31,Angela Brooks,General Manager,Management,overhead,86.7,4083.33,387.92
+2026-05-31,Brian Choi,Install Tech,Field Techs,direct,40.0,1800.0,171.0
+2026-05-31,Carlos Mendez,Service Tech,Field Techs,direct,151.7,6185.39,587.61
+2026-05-31,Chloe Martin,Marketing Manager,Marketing,overhead,86.7,2583.33,245.42
+2026-05-31,Danny Ortiz,Service Tech,Field Techs,direct,70.5,2866.63,272.33
+2026-05-31,Dee Ramsey,Fleet & Safety Coordinator,Operations,overhead,86.7,1916.67,182.08
+2026-05-31,Eli Torres,Install Helper,Install Crew,overhead,86.7,1958.33,186.04
+2026-05-31,Greg Sandoval,Comfort Advisor (Sales),Sales,overhead,86.7,2833.33,269.17
+2026-05-31,Harold Finch,Bookkeeper,Office,overhead,86.7,2416.67,229.58
+2026-05-31,Jake Sullivan,Install Lead,Field Techs,direct,211.8,8635.17,820.34
+2026-05-31,Jessica Lowe,CSR,Office,overhead,86.7,1750.0,166.25
+2026-05-31,Josh Whelan,Install Helper,Install Crew,overhead,86.7,1916.67,182.08
+2026-05-31,Kevin Brandt,Service Tech,Field Techs,direct,127.2,5185.46,492.62
+2026-05-31,Luis Herrera,Service Tech,Field Techs,direct,135.1,5505.69,523.04
+2026-05-31,Marcus Reyes,Senior Service Tech,Field Techs,direct,203.3,8288.9,787.45
+2026-05-31,Mike Dunlap,Service Manager,Operations,overhead,86.7,3000.0,285.0
+2026-05-31,Monica Reyes,CSR,Office,overhead,86.7,1708.33,162.29
+2026-05-31,Nina Patel,Comfort Advisor (Sales),Sales,overhead,86.7,2666.67,253.33
+2026-05-31,Priya Nair,Dispatcher,Operations,overhead,86.7,1916.67,182.08
+2026-05-31,Ray Thompson,Duct Crew Lead,Field Techs,direct,188.1,7666.87,728.35
+2026-05-31,Rosa Medina,Membership Coordinator,Office,overhead,86.7,1791.67,170.21
+2026-05-31,Sam Delgado,Service Tech,Field Techs,direct,138.6,5646.95,536.46
+2026-05-31,Tom Whitfield,Owner,Management,overhead,86.7,5000.0,475.0
+2026-05-31,Tyrone Jackson,Service Tech,Field Techs,direct,118.6,4824.1,458.29
+2026-05-31,Victor Alvarez,Install Lead,Field Techs,direct,167.2,6815.32,647.46
+2026-05-31,Walt Henderson,Warehouse / Parts,Operations,overhead,86.7,1833.33,174.17
+2026-06-15,Aaron Pike,Service Tech,Field Techs,direct,164.8,6717.97,638.21
+2026-06-15,Andre Wilkins,Install Helper,Install Crew,overhead,86.7,1979.17,188.02
+2026-06-15,Angela Brooks,General Manager,Management,overhead,86.7,4083.33,387.92
+2026-06-15,Brian Choi,Install Tech,Field Techs,direct,232.1,9462.25,898.91
+2026-06-15,Carlos Mendez,Service Tech,Field Techs,direct,127.3,5185.63,492.64
+2026-06-15,Chloe Martin,Marketing Manager,Marketing,overhead,86.7,2583.33,245.42
+2026-06-15,Danny Ortiz,Service Tech,Field Techs,direct,130.4,5315.18,504.94
+2026-06-15,Dee Ramsey,Fleet & Safety Coordinator,Operations,overhead,86.7,1916.67,182.08
+2026-06-15,Eli Torres,Install Helper,Install Crew,overhead,86.7,1958.33,186.04
+2026-06-15,Greg Sandoval,Comfort Advisor (Sales),Sales,overhead,86.7,2833.33,269.17
+2026-06-15,Harold Finch,Bookkeeper,Office,overhead,86.7,2416.67,229.58
+2026-06-15,Jake Sullivan,Install Lead,Field Techs,direct,40.0,1800.0,171.0
+2026-06-15,Jessica Lowe,CSR,Office,overhead,86.7,1750.0,166.25
+2026-06-15,Josh Whelan,Install Helper,Install Crew,overhead,86.7,1916.67,182.08
+2026-06-15,Kevin Brandt,Service Tech,Field Techs,direct,215.7,8792.35,835.27
+2026-06-15,Luis Herrera,Service Tech,Field Techs,direct,100.4,4092.78,388.81
+2026-06-15,Marcus Reyes,Senior Service Tech,Field Techs,direct,184.0,7500.96,712.59
+2026-06-15,Mike Dunlap,Service Manager,Operations,overhead,86.7,3000.0,285.0
+2026-06-15,Monica Reyes,CSR,Office,overhead,86.7,1708.33,162.29
+2026-06-15,Nina Patel,Comfort Advisor (Sales),Sales,overhead,86.7,2666.67,253.33
+2026-06-15,Priya Nair,Dispatcher,Operations,overhead,86.7,1916.67,182.08
+2026-06-15,Ray Thompson,Duct Crew Lead,Field Techs,direct,189.4,7720.34,733.43
+2026-06-15,Rosa Medina,Membership Coordinator,Office,overhead,86.7,1791.67,170.21
+2026-06-15,Sam Delgado,Service Tech,Field Techs,direct,132.7,5408.37,513.8
+2026-06-15,Tom Whitfield,Owner,Management,overhead,86.7,5000.0,475.0
+2026-06-15,Tyrone Jackson,Service Tech,Field Techs,direct,113.2,4614.35,438.36
+2026-06-15,Victor Alvarez,Install Lead,Field Techs,direct,321.5,13108.17,1245.28
+2026-06-15,Walt Henderson,Warehouse / Parts,Operations,overhead,86.7,1833.33,174.17
+2026-06-30,Aaron Pike,Service Tech,Field Techs,direct,120.2,4899.16,465.42
+2026-06-30,Andre Wilkins,Install Helper,Install Crew,overhead,86.7,1979.17,188.02
+2026-06-30,Angela Brooks,General Manager,Management,overhead,86.7,4083.33,387.92
+2026-06-30,Brian Choi,Install Tech,Field Techs,direct,250.4,10207.38,969.7
+2026-06-30,Carlos Mendez,Service Tech,Field Techs,direct,215.1,8768.64,833.02
+2026-06-30,Chloe Martin,Marketing Manager,Marketing,overhead,86.7,2583.33,245.42
+2026-06-30,Danny Ortiz,Service Tech,Field Techs,direct,224.1,9132.36,867.57
+2026-06-30,Dee Ramsey,Fleet & Safety Coordinator,Operations,overhead,86.7,1916.67,182.08
+2026-06-30,Eli Torres,Install Helper,Install Crew,overhead,86.7,1958.33,186.04
+2026-06-30,Greg Sandoval,Comfort Advisor (Sales),Sales,overhead,86.7,2833.33,269.17
+2026-06-30,Harold Finch,Bookkeeper,Office,overhead,86.7,2416.67,229.58
+2026-06-30,Jake Sullivan,Install Lead,Field Techs,direct,342.7,13969.38,1327.09
+2026-06-30,Jessica Lowe,CSR,Office,overhead,86.7,1750.0,166.25
+2026-06-30,Josh Whelan,Install Helper,Install Crew,overhead,86.7,1916.67,182.08
+2026-06-30,Kevin Brandt,Service Tech,Field Techs,direct,248.2,10117.07,961.12
+2026-06-30,Luis Herrera,Service Tech,Field Techs,direct,88.2,3592.89,341.33
+2026-06-30,Marcus Reyes,Senior Service Tech,Field Techs,direct,279.7,11402.22,1083.21
+2026-06-30,Mike Dunlap,Service Manager,Operations,overhead,86.7,3000.0,285.0
+2026-06-30,Monica Reyes,CSR,Office,overhead,86.7,1708.33,162.29
+2026-06-30,Nina Patel,Comfort Advisor (Sales),Sales,overhead,86.7,2666.67,253.33
+2026-06-30,Priya Nair,Dispatcher,Operations,overhead,86.7,1916.67,182.08
+2026-06-30,Ray Thompson,Duct Crew Lead,Field Techs,direct,191.4,7806.06,741.58
+2026-06-30,Rosa Medina,Membership Coordinator,Office,overhead,86.7,1791.67,170.21
+2026-06-30,Sam Delgado,Service Tech,Field Techs,direct,191.4,7803.42,741.32
+2026-06-30,Tom Whitfield,Owner,Management,overhead,86.7,5000.0,475.0
+2026-06-30,Tyrone Jackson,Service Tech,Field Techs,direct,162.0,6605.22,627.5
+2026-06-30,Victor Alvarez,Install Lead,Field Techs,direct,133.9,5460.68,518.76
+2026-06-30,Walt Henderson,Warehouse / Parts,Operations,overhead,86.7,1833.33,174.17
+2026-07-15,Aaron Pike,Service Tech,Field Techs,direct,93.7,3821.09,363.0
+2026-07-15,Andre Wilkins,Install Helper,Install Crew,overhead,86.7,1979.17,188.02
+2026-07-15,Angela Brooks,General Manager,Management,overhead,86.7,4083.33,387.92
+2026-07-15,Brian Choi,Install Tech,Field Techs,direct,208.0,8477.11,805.33
+2026-07-15,Carlos Mendez,Service Tech,Field Techs,direct,124.0,5055.59,480.28
+2026-07-15,Chloe Martin,Marketing Manager,Marketing,overhead,86.7,2583.33,245.42
+2026-07-15,Danny Ortiz,Service Tech,Field Techs,direct,234.4,9552.95,907.53
+2026-07-15,Dee Ramsey,Fleet & Safety Coordinator,Operations,overhead,86.7,1916.67,182.08
+2026-07-15,Eli Torres,Install Helper,Install Crew,overhead,86.7,1958.33,186.04
+2026-07-15,Greg Sandoval,Comfort Advisor (Sales),Sales,overhead,86.7,2833.33,269.17
+2026-07-15,Harold Finch,Bookkeeper,Office,overhead,86.7,2416.67,229.58
+2026-07-15,Jake Sullivan,Install Lead,Field Techs,direct,245.2,9995.36,949.56
+2026-07-15,Jessica Lowe,CSR,Office,overhead,86.7,1750.0,166.25
+2026-07-15,Josh Whelan,Install Helper,Install Crew,overhead,86.7,1916.67,182.08
+2026-07-15,Kevin Brandt,Service Tech,Field Techs,direct,329.0,13410.02,1273.95
+2026-07-15,Luis Herrera,Service Tech,Field Techs,direct,136.9,5579.94,530.09
+2026-07-15,Marcus Reyes,Senior Service Tech,Field Techs,direct,256.0,10432.72,991.11
+2026-07-15,Mike Dunlap,Service Manager,Operations,overhead,86.7,3000.0,285.0
+2026-07-15,Monica Reyes,CSR,Office,overhead,86.7,1708.33,162.29
+2026-07-15,Nina Patel,Comfort Advisor (Sales),Sales,overhead,86.7,2666.67,253.33
+2026-07-15,Priya Nair,Dispatcher,Operations,overhead,86.7,1916.67,182.08
+2026-07-15,Ray Thompson,Duct Crew Lead,Field Techs,direct,144.2,5875.53,558.17
+2026-07-15,Rosa Medina,Membership Coordinator,Office,overhead,86.7,1791.67,170.21
+2026-07-15,Sam Delgado,Service Tech,Field Techs,direct,103.6,4225.64,401.44
+2026-07-15,Tom Whitfield,Owner,Management,overhead,86.7,5000.0,475.0
+2026-07-15,Tyrone Jackson,Service Tech,Field Techs,direct,105.5,4299.31,408.43
+2026-07-15,Victor Alvarez,Install Lead,Field Techs,direct,391.1,15945.06,1514.78
+2026-07-15,Walt Henderson,Warehouse / Parts,Operations,overhead,86.7,1833.33,174.17
+2026-07-31,Aaron Pike,Service Tech,Field Techs,direct,118.4,4827.46,458.61
+2026-07-31,Andre Wilkins,Install Helper,Install Crew,overhead,86.7,1979.17,188.02
+2026-07-31,Angela Brooks,General Manager,Management,overhead,86.7,4083.33,387.92
+2026-07-31,Brian Choi,Install Tech,Field Techs,direct,330.9,13489.81,1281.53
+2026-07-31,Carlos Mendez,Service Tech,Field Techs,direct,173.5,7065.36,671.21
+2026-07-31,Chloe Martin,Marketing Manager,Marketing,overhead,86.7,2583.33,245.42
+2026-07-31,Danny Ortiz,Service Tech,Field Techs,direct,135.3,5515.82,524.0
+2026-07-31,Dee Ramsey,Fleet & Safety Coordinator,Operations,overhead,86.7,1916.67,182.08
+2026-07-31,Eli Torres,Install Helper,Install Crew,overhead,86.7,1958.33,186.04
+2026-07-31,Greg Sandoval,Comfort Advisor (Sales),Sales,overhead,86.7,2833.33,269.17
+2026-07-31,Harold Finch,Bookkeeper,Office,overhead,86.7,2416.67,229.58
+2026-07-31,Jake Sullivan,Install Lead,Field Techs,direct,223.0,9092.58,863.8
+2026-07-31,Jessica Lowe,CSR,Office,overhead,86.7,1750.0,166.25
+2026-07-31,Josh Whelan,Install Helper,Install Crew,overhead,86.7,1916.67,182.08
+2026-07-31,Kevin Brandt,Service Tech,Field Techs,direct,154.9,6313.26,599.76
+2026-07-31,Luis Herrera,Service Tech,Field Techs,direct,110.8,4516.28,429.05
+2026-07-31,Marcus Reyes,Senior Service Tech,Field Techs,direct,255.6,10421.53,990.05
+2026-07-31,Mike Dunlap,Service Manager,Operations,overhead,86.7,3000.0,285.0
+2026-07-31,Monica Reyes,CSR,Office,overhead,86.7,1708.33,162.29
+2026-07-31,Nina Patel,Comfort Advisor (Sales),Sales,overhead,86.7,2666.67,253.33
+2026-07-31,Priya Nair,Dispatcher,Operations,overhead,86.7,1916.67,182.08
+2026-07-31,Ray Thompson,Duct Crew Lead,Field Techs,direct,212.9,8680.74,824.67
+2026-07-31,Rosa Medina,Membership Coordinator,Office,overhead,86.7,1791.67,170.21
+2026-07-31,Sam Delgado,Service Tech,Field Techs,direct,197.6,8051.8,764.92
+2026-07-31,Tom Whitfield,Owner,Management,overhead,86.7,5000.0,475.0
+2026-07-31,Tyrone Jackson,Service Tech,Field Techs,direct,165.6,6751.57,641.4
+2026-07-31,Victor Alvarez,Install Lead,Field Techs,direct,251.5,10251.11,973.85
+2026-07-31,Walt Henderson,Warehouse / Parts,Operations,overhead,86.7,1833.33,174.17
+2026-08-15,Aaron Pike,Service Tech,Field Techs,direct,152.3,6198.7,588.88
+2026-08-15,Andre Wilkins,Install Helper,Install Crew,overhead,86.7,1979.17,188.02
+2026-08-15,Angela Brooks,General Manager,Management,overhead,86.7,4083.33,387.92
+2026-08-15,Brian Choi,Install Tech,Field Techs,direct,84.4,3442.23,327.01
+2026-08-15,Carlos Mendez,Service Tech,Field Techs,direct,107.4,4377.94,415.9
+2026-08-15,Chloe Martin,Marketing Manager,Marketing,overhead,86.7,2583.33,245.42
+2026-08-15,Danny Ortiz,Service Tech,Field Techs,direct,215.3,8774.67,833.59
+2026-08-15,Dee Ramsey,Fleet & Safety Coordinator,Operations,overhead,86.7,1916.67,182.08
+2026-08-15,Eli Torres,Install Helper,Install Crew,overhead,86.7,1958.33,186.04
+2026-08-15,Greg Sandoval,Comfort Advisor (Sales),Sales,overhead,86.7,2833.33,269.17
+2026-08-15,Harold Finch,Bookkeeper,Office,overhead,86.7,2416.67,229.58
+2026-08-15,Jake Sullivan,Install Lead,Field Techs,direct,204.2,8324.19,790.8
+2026-08-15,Jessica Lowe,CSR,Office,overhead,86.7,1750.0,166.25
+2026-08-15,Josh Whelan,Install Helper,Install Crew,overhead,86.7,1916.67,182.08
+2026-08-15,Kevin Brandt,Service Tech,Field Techs,direct,260.7,10627.1,1009.57
+2026-08-15,Luis Herrera,Service Tech,Field Techs,direct,63.2,2575.89,244.71
+2026-08-15,Marcus Reyes,Senior Service Tech,Field Techs,direct,177.6,7241.43,687.94
+2026-08-15,Mike Dunlap,Service Manager,Operations,overhead,86.7,3000.0,285.0
+2026-08-15,Monica Reyes,CSR,Office,overhead,86.7,1708.33,162.29
+2026-08-15,Nina Patel,Comfort Advisor (Sales),Sales,overhead,86.7,2666.67,253.33
+2026-08-15,Priya Nair,Dispatcher,Operations,overhead,86.7,1916.67,182.08
+2026-08-15,Ray Thompson,Duct Crew Lead,Field Techs,direct,154.5,6300.95,598.59
+2026-08-15,Rosa Medina,Membership Coordinator,Office,overhead,86.7,1791.67,170.21
+2026-08-15,Sam Delgado,Service Tech,Field Techs,direct,241.2,9834.49,934.28
+2026-08-15,Tom Whitfield,Owner,Management,overhead,86.7,5000.0,475.0
+2026-08-15,Tyrone Jackson,Service Tech,Field Techs,direct,136.1,5550.19,527.27
+2026-08-15,Victor Alvarez,Install Lead,Field Techs,direct,120.4,4910.04,466.45
+2026-08-15,Walt Henderson,Warehouse / Parts,Operations,overhead,86.7,1833.33,174.17
+2026-08-31,Aaron Pike,Service Tech,Field Techs,direct,191.3,7799.76,740.98
+2026-08-31,Andre Wilkins,Install Helper,Install Crew,overhead,86.7,1979.17,188.02
+2026-08-31,Angela Brooks,General Manager,Management,overhead,86.7,4083.33,387.92
+2026-08-31,Brian Choi,Install Tech,Field Techs,direct,220.3,8980.16,853.11
+2026-08-31,Carlos Mendez,Service Tech,Field Techs,direct,160.2,6527.41,620.1
+2026-08-31,Chloe Martin,Marketing Manager,Marketing,overhead,86.7,2583.33,245.42
+2026-08-31,Danny Ortiz,Service Tech,Field Techs,direct,218.0,8886.94,844.26
+2026-08-31,Dee Ramsey,Fleet & Safety Coordinator,Operations,overhead,86.7,1916.67,182.08
+2026-08-31,Eli Torres,Install Helper,Install Crew,overhead,86.7,1958.33,186.04
+2026-08-31,Greg Sandoval,Comfort Advisor (Sales),Sales,overhead,86.7,2833.33,269.17
+2026-08-31,Harold Finch,Bookkeeper,Office,overhead,86.7,2416.67,229.58
+2026-08-31,Jake Sullivan,Install Lead,Field Techs,direct,215.0,8762.91,832.48
+2026-08-31,Jessica Lowe,CSR,Office,overhead,86.7,1750.0,166.25
+2026-08-31,Josh Whelan,Install Helper,Install Crew,overhead,86.7,1916.67,182.08
+2026-08-31,Kevin Brandt,Service Tech,Field Techs,direct,264.8,10794.4,1025.47
+2026-08-31,Luis Herrera,Service Tech,Field Techs,direct,166.2,6771.17,643.26
+2026-08-31,Marcus Reyes,Senior Service Tech,Field Techs,direct,211.0,8604.74,817.45
+2026-08-31,Mike Dunlap,Service Manager,Operations,overhead,86.7,3000.0,285.0
+2026-08-31,Monica Reyes,CSR,Office,overhead,86.7,1708.33,162.29
+2026-08-31,Nina Patel,Comfort Advisor (Sales),Sales,overhead,86.7,2666.67,253.33
+2026-08-31,Priya Nair,Dispatcher,Operations,overhead,86.7,1916.67,182.08
+2026-08-31,Ray Thompson,Duct Crew Lead,Field Techs,direct,207.9,8474.63,805.09
+2026-08-31,Rosa Medina,Membership Coordinator,Office,overhead,86.7,1791.67,170.21
+2026-08-31,Sam Delgado,Service Tech,Field Techs,direct,151.4,6166.47,585.81
+2026-08-31,Tom Whitfield,Owner,Management,overhead,86.7,5000.0,475.0
+2026-08-31,Tyrone Jackson,Service Tech,Field Techs,direct,112.2,4574.2,434.55
+2026-08-31,Victor Alvarez,Install Lead,Field Techs,direct,323.0,13166.67,1250.83
+2026-08-31,Walt Henderson,Warehouse / Parts,Operations,overhead,86.7,1833.33,174.17
+2026-09-15,Aaron Pike,Service Tech,Field Techs,direct,90.7,3689.1,350.46
+2026-09-15,Andre Wilkins,Install Helper,Install Crew,overhead,86.7,1979.17,188.02
+2026-09-15,Angela Brooks,General Manager,Management,overhead,86.7,4083.33,387.92
+2026-09-15,Brian Choi,Install Tech,Field Techs,direct,130.8,5329.81,506.33
+2026-09-15,Carlos Mendez,Service Tech,Field Techs,direct,138.3,5638.29,535.64
+2026-09-15,Chloe Martin,Marketing Manager,Marketing,overhead,86.7,2583.33,245.42
+2026-09-15,Danny Ortiz,Service Tech,Field Techs,direct,216.1,8812.97,837.23
+2026-09-15,Dee Ramsey,Fleet & Safety Coordinator,Operations,overhead,86.7,1916.67,182.08
+2026-09-15,Eli Torres,Install Helper,Install Crew,overhead,86.7,1958.33,186.04
+2026-09-15,Greg Sandoval,Comfort Advisor (Sales),Sales,overhead,86.7,2833.33,269.17
+2026-09-15,Harold Finch,Bookkeeper,Office,overhead,86.7,2416.67,229.58
+2026-09-15,Jake Sullivan,Install Lead,Field Techs,direct,335.9,13692.63,1300.8
+2026-09-15,Jessica Lowe,CSR,Office,overhead,86.7,1750.0,166.25
+2026-09-15,Josh Whelan,Install Helper,Install Crew,overhead,86.7,1916.67,182.08
+2026-09-15,Kevin Brandt,Service Tech,Field Techs,direct,239.9,9777.63,928.88
+2026-09-15,Luis Herrera,Service Tech,Field Techs,direct,68.0,2772.57,263.39
+2026-09-15,Marcus Reyes,Senior Service Tech,Field Techs,direct,192.8,7861.05,746.8
+2026-09-15,Mike Dunlap,Service Manager,Operations,overhead,86.7,3000.0,285.0
+2026-09-15,Monica Reyes,CSR,Office,overhead,86.7,1708.33,162.29
+2026-09-15,Nina Patel,Comfort Advisor (Sales),Sales,overhead,86.7,2666.67,253.33
+2026-09-15,Priya Nair,Dispatcher,Operations,overhead,86.7,1916.67,182.08
+2026-09-15,Ray Thompson,Duct Crew Lead,Field Techs,direct,99.8,4067.35,386.4
+2026-09-15,Rosa Medina,Membership Coordinator,Office,overhead,86.7,1791.67,170.21
+2026-09-15,Sam Delgado,Service Tech,Field Techs,direct,87.2,3553.86,337.62
+2026-09-15,Tom Whitfield,Owner,Management,overhead,86.7,5000.0,475.0
+2026-09-15,Tyrone Jackson,Service Tech,Field Techs,direct,143.9,5866.83,557.35
+2026-09-15,Victor Alvarez,Install Lead,Field Techs,direct,116.2,4735.84,449.9
+2026-09-15,Walt Henderson,Warehouse / Parts,Operations,overhead,86.7,1833.33,174.17
+2026-09-30,Aaron Pike,Service Tech,Field Techs,direct,77.5,3157.39,299.95
+2026-09-30,Andre Wilkins,Install Helper,Install Crew,overhead,86.7,1979.17,188.02
+2026-09-30,Angela Brooks,General Manager,Management,overhead,86.7,4083.33,387.92
+2026-09-30,Brian Choi,Install Tech,Field Techs,direct,291.5,11882.23,1128.81
+2026-09-30,Carlos Mendez,Service Tech,Field Techs,direct,122.5,4994.16,474.44
+2026-09-30,Chloe Martin,Marketing Manager,Marketing,overhead,86.7,2583.33,245.42
+2026-09-30,Danny Ortiz,Service Tech,Field Techs,direct,97.8,3985.74,378.64
+2026-09-30,Dee Ramsey,Fleet & Safety Coordinator,Operations,overhead,86.7,1916.67,182.08
+2026-09-30,Eli Torres,Install Helper,Install Crew,overhead,86.7,1958.33,186.04
+2026-09-30,Greg Sandoval,Comfort Advisor (Sales),Sales,overhead,86.7,2833.33,269.17
+2026-09-30,Harold Finch,Bookkeeper,Office,overhead,86.7,2416.67,229.58
+2026-09-30,Jake Sullivan,Install Lead,Field Techs,direct,183.2,7467.76,709.44
+2026-09-30,Jessica Lowe,CSR,Office,overhead,86.7,1750.0,166.25
+2026-09-30,Josh Whelan,Install Helper,Install Crew,overhead,86.7,1916.67,182.08
+2026-09-30,Kevin Brandt,Service Tech,Field Techs,direct,149.5,6097.63,579.27
+2026-09-30,Luis Herrera,Service Tech,Field Techs,direct,110.8,4506.58,428.13
+2026-09-30,Marcus Reyes,Senior Service Tech,Field Techs,direct,203.8,8307.55,789.22
+2026-09-30,Mike Dunlap,Service Manager,Operations,overhead,86.7,3000.0,285.0
+2026-09-30,Monica Reyes,CSR,Office,overhead,86.7,1708.33,162.29
+2026-09-30,Nina Patel,Comfort Advisor (Sales),Sales,overhead,86.7,2666.67,253.33
+2026-09-30,Priya Nair,Dispatcher,Operations,overhead,86.7,1916.67,182.08
+2026-09-30,Ray Thompson,Duct Crew Lead,Field Techs,direct,170.2,6938.11,659.12
+2026-09-30,Rosa Medina,Membership Coordinator,Office,overhead,86.7,1791.67,170.21
+2026-09-30,Sam Delgado,Service Tech,Field Techs,direct,123.5,5036.23,478.44
+2026-09-30,Tom Whitfield,Owner,Management,overhead,86.7,5000.0,475.0
+2026-09-30,Tyrone Jackson,Service Tech,Field Techs,direct,112.8,4597.13,436.73
+2026-09-30,Victor Alvarez,Install Lead,Field Techs,direct,260.9,10634.94,1010.32
+2026-09-30,Walt Henderson,Warehouse / Parts,Operations,overhead,86.7,1833.33,174.17

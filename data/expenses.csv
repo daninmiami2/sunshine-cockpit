@@ -1,0 +1,134 @@
+date,category,vendor,amount
+2025-10-01,Rent - shop & office,Sunrise Industrial Park LLC,9022.76
+2025-10-01,Professional fees,CPA & legal,2411.76
+2025-10-01,Licensing & training,EPA / NATE,806.37
+2025-10-03,Vehicle leases & maintenance,Fleet Partners,10529.86
+2025-10-03,Software & subscriptions,Jobber / QuickBooks / misc,1736.52
+2025-10-03,Utilities & phones,FPL / Verizon,2156.71
+2025-10-04,Insurance (GL / WC / auto),Everglades Mutual,9879.85
+2025-10-10,Misc / warranty,Various,2461.72
+2025-10-10,Tools & equipment,Ferguson / Johnstone Supply,5493.2
+2025-10-31,Fuel,Shell Fleet Card,8853.33
+2025-10-31,Merchant & financing fees,Stripe / GreenSky,8817.68
+2025-11-01,Utilities & phones,FPL / Verizon,2255.86
+2025-11-02,Rent - shop & office,Sunrise Industrial Park LLC,9914.11
+2025-11-03,Vehicle leases & maintenance,Fleet Partners,11071.26
+2025-11-03,Software & subscriptions,Jobber / QuickBooks / misc,1748.27
+2025-11-04,Professional fees,CPA & legal,2357.36
+2025-11-04,Licensing & training,EPA / NATE,806.68
+2025-11-05,Insurance (GL / WC / auto),Everglades Mutual,10183.7
+2025-11-14,Tools & equipment,Ferguson / Johnstone Supply,4278.23
+2025-11-19,Misc / warranty,Various,1580.23
+2025-11-30,Fuel,Shell Fleet Card,7997.83
+2025-11-30,Merchant & financing fees,Stripe / GreenSky,8707.65
+2025-12-01,Rent - shop & office,Sunrise Industrial Park LLC,9856.99
+2025-12-01,Licensing & training,EPA / NATE,817.46
+2025-12-02,Professional fees,CPA & legal,2325.15
+2025-12-03,Insurance (GL / WC / auto),Everglades Mutual,10140.35
+2025-12-03,Software & subscriptions,Jobber / QuickBooks / misc,1716.43
+2025-12-03,Utilities & phones,FPL / Verizon,2197.01
+2025-12-05,Vehicle leases & maintenance,Fleet Partners,10938.46
+2025-12-12,Misc / warranty,Various,1038.17
+2025-12-22,Tools & equipment,Ferguson / Johnstone Supply,4568.26
+2025-12-31,Fuel,Shell Fleet Card,5229.56
+2025-12-31,Merchant & financing fees,Stripe / GreenSky,5784.57
+2026-01-01,Insurance (GL / WC / auto),Everglades Mutual,9441.25
+2026-01-02,Software & subscriptions,Jobber / QuickBooks / misc,1833.33
+2026-01-02,Licensing & training,EPA / NATE,789.72
+2026-01-03,Vehicle leases & maintenance,Fleet Partners,11245.04
+2026-01-04,Professional fees,CPA & legal,2560.0
+2026-01-05,Rent - shop & office,Sunrise Industrial Park LLC,9666.52
+2026-01-05,Utilities & phones,FPL / Verizon,2232.04
+2026-01-12,Tools & equipment,Ferguson / Johnstone Supply,3512.53
+2026-01-21,Misc / warranty,Various,1919.35
+2026-01-31,Fuel,Shell Fleet Card,7747.06
+2026-01-31,Merchant & financing fees,Stripe / GreenSky,8189.34
+2026-02-01,Rent - shop & office,Sunrise Industrial Park LLC,9750.52
+2026-02-02,Software & subscriptions,Jobber / QuickBooks / misc,1824.55
+2026-02-02,Utilities & phones,FPL / Verizon,2260.32
+2026-02-03,Licensing & training,EPA / NATE,799.29
+2026-02-03,Vehicle leases & maintenance,Fleet Partners,11397.25
+2026-02-03,Professional fees,CPA & legal,2360.45
+2026-02-04,Insurance (GL / WC / auto),Everglades Mutual,9589.85
+2026-02-11,Misc / warranty,Various,1404.69
+2026-02-11,Tools & equipment,Ferguson / Johnstone Supply,4469.71
+2026-02-28,Merchant & financing fees,Stripe / GreenSky,5710.36
+2026-02-28,Fuel,Shell Fleet Card,6005.79
+2026-03-03,Licensing & training,EPA / NATE,780.7
+2026-03-03,Software & subscriptions,Jobber / QuickBooks / misc,1702.94
+2026-03-03,Utilities & phones,FPL / Verizon,2205.54
+2026-03-04,Vehicle leases & maintenance,Fleet Partners,10789.25
+2026-03-04,Professional fees,CPA & legal,2328.43
+2026-03-05,Rent - shop & office,Sunrise Industrial Park LLC,9747.7
+2026-03-05,Insurance (GL / WC / auto),Everglades Mutual,10289.91
+2026-03-16,Tools & equipment,Ferguson / Johnstone Supply,6283.91
+2026-03-20,Misc / warranty,Various,3049.26
+2026-03-31,Fuel,Shell Fleet Card,7896.23
+2026-03-31,Merchant & financing fees,Stripe / GreenSky,7899.21
+2026-04-01,Utilities & phones,FPL / Verizon,2093.29
+2026-04-01,Rent - shop & office,Sunrise Industrial Park LLC,9544.15
+2026-04-01,Vehicle leases & maintenance,Fleet Partners,11169.74
+2026-04-02,Insurance (GL / WC / auto),Everglades Mutual,9306.47
+2026-04-02,Software & subscriptions,Jobber / QuickBooks / misc,1787.97
+2026-04-04,Professional fees,CPA & legal,2407.92
+2026-04-05,Licensing & training,EPA / NATE,825.15
+2026-04-13,Misc / warranty,Various,2721.45
+2026-04-14,Tools & equipment,Ferguson / Johnstone Supply,5443.67
+2026-04-14,Vehicle purchase (down payment),Ford of Pembroke Pines,22000.0
+2026-04-30,Fuel,Shell Fleet Card,8575.34
+2026-04-30,Merchant & financing fees,Stripe / GreenSky,8808.11
+2026-05-01,Software & subscriptions,Jobber / QuickBooks / misc,1762.3
+2026-05-02,Insurance (GL / WC / auto),Everglades Mutual,9980.15
+2026-05-03,Rent - shop & office,Sunrise Industrial Park LLC,9955.11
+2026-05-05,Vehicle leases & maintenance,Fleet Partners,10538.17
+2026-05-05,Utilities & phones,FPL / Verizon,2230.03
+2026-05-05,Professional fees,CPA & legal,2428.56
+2026-05-05,Licensing & training,EPA / NATE,768.85
+2026-05-15,Tools & equipment,Ferguson / Johnstone Supply,4693.75
+2026-05-15,Misc / warranty,Various,3082.36
+2026-05-31,Fuel,Shell Fleet Card,10423.88
+2026-05-31,Merchant & financing fees,Stripe / GreenSky,11004.58
+2026-06-03,Software & subscriptions,Jobber / QuickBooks / misc,1767.73
+2026-06-04,Professional fees,CPA & legal,2418.87
+2026-06-04,Utilities & phones,FPL / Verizon,2202.0
+2026-06-04,Rent - shop & office,Sunrise Industrial Park LLC,10115.32
+2026-06-04,Vehicle leases & maintenance,Fleet Partners,10886.82
+2026-06-05,Licensing & training,EPA / NATE,764.86
+2026-06-05,Insurance (GL / WC / auto),Everglades Mutual,8986.64
+2026-06-09,Misc / warranty,Various,2658.06
+2026-06-21,Tools & equipment,Ferguson / Johnstone Supply,4899.53
+2026-06-30,Fuel,Shell Fleet Card,13366.13
+2026-06-30,Merchant & financing fees,Stripe / GreenSky,13096.24
+2026-07-01,Rent - shop & office,Sunrise Industrial Park LLC,9570.62
+2026-07-01,Insurance (GL / WC / auto),Everglades Mutual,9832.47
+2026-07-02,Professional fees,CPA & legal,2282.1
+2026-07-03,Utilities & phones,FPL / Verizon,2281.47
+2026-07-03,Licensing & training,EPA / NATE,792.07
+2026-07-04,Vehicle leases & maintenance,Fleet Partners,10848.92
+2026-07-05,Software & subscriptions,Jobber / QuickBooks / misc,1795.44
+2026-07-11,Tools & equipment,Ferguson / Johnstone Supply,3481.85
+2026-07-21,Misc / warranty,Various,2005.79
+2026-07-31,Fuel,Shell Fleet Card,14805.27
+2026-07-31,Merchant & financing fees,Stripe / GreenSky,13872.25
+2026-08-01,Rent - shop & office,Sunrise Industrial Park LLC,9523.66
+2026-08-01,Software & subscriptions,Jobber / QuickBooks / misc,1778.07
+2026-08-03,Professional fees,CPA & legal,2412.67
+2026-08-04,Vehicle leases & maintenance,Fleet Partners,11143.12
+2026-08-04,Utilities & phones,FPL / Verizon,2238.33
+2026-08-04,Licensing & training,EPA / NATE,797.95
+2026-08-05,Insurance (GL / WC / auto),Everglades Mutual,9931.59
+2026-08-21,Misc / warranty,Various,1869.52
+2026-08-22,Tools & equipment,Ferguson / Johnstone Supply,4621.65
+2026-08-31,Merchant & financing fees,Stripe / GreenSky,13729.95
+2026-08-31,Fuel,Shell Fleet Card,13733.17
+2026-09-01,Rent - shop & office,Sunrise Industrial Park LLC,9500.61
+2026-09-01,Vehicle leases & maintenance,Fleet Partners,10858.95
+2026-09-02,Licensing & training,EPA / NATE,798.81
+2026-09-04,Software & subscriptions,Jobber / QuickBooks / misc,1834.81
+2026-09-04,Professional fees,CPA & legal,2332.54
+2026-09-05,Insurance (GL / WC / auto),Everglades Mutual,9725.3
+2026-09-05,Utilities & phones,FPL / Verizon,2165.63
+2026-09-20,Tools & equipment,Ferguson / Johnstone Supply,5297.92
+2026-09-21,Misc / warranty,Various,1334.62
+2026-09-30,Fuel,Shell Fleet Card,12251.51
+2026-09-30,Merchant & financing fees,Stripe / GreenSky,11722.06
