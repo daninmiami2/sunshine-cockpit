@@ -58,6 +58,22 @@ def bar_round(fig):  # thin bars, no outline
     return fig
 
 
+def view_picker(key: str) -> str:
+    """Weekly / Monthly / Quarterly toggle; only regroups time-series charts."""
+    return st.radio("View by", M.VIEWS, index=1, horizontal=True, key=key,
+                    help="Changes how the charts below are grouped. Headline numbers and the date range stay the same.")
+
+
+def period_axis(fig: go.Figure, pm: pd.DataFrame, view: str) -> go.Figure:
+    """Categorical x-axis in period order with a clear title and thinned ticks for weekly."""
+    labels = list(pm.label)
+    ticks = labels[::4] if view == "Weekly" else labels
+    fig.update_xaxes(type="category", categoryorder="array", categoryarray=labels, tickmode="array",
+                     tickvals=ticks, ticktext=ticks, title=dict(text=M.AXIS_TITLE[view], font=dict(color=MUTED, size=11)),
+                     tickangle=-45 if view == "Weekly" or len(labels) > 12 else 0)
+    return fig
+
+
 # ---------------------------------------------------------------- data
 @st.cache_data(show_spinner="Loading data...")
 def get_data():
@@ -178,30 +194,37 @@ with tab_week:
 
 # ================================================================ REVENUE & MARGIN
 with tab_rev:
-    pnl = M.monthly_pnl(tables, f_start, f_end)
     rev, gp = J.revenue.sum(), J.gross_profit.sum()
-    net = pnl.net_profit.sum()
+    net = M.period_pnl(tables, f_start, f_end, "Monthly").net_profit.sum()  # headline: independent of the toggle
     k = st.columns(4)
     k[0].metric("Revenue", M.money(rev))
     k[1].metric("Gross profit", M.money(gp))
     k[2].metric("Gross margin", M.pct(M.safe_div(gp, rev), 1))
-    k[3].metric("Est. net profit", M.money(net), f"{M.safe_div(net, rev):.1%} of revenue", delta_color="off")
+    k[3].metric("Est. net profit", M.money(net), f"{M.pct(M.safe_div(net, rev), 1)} of revenue", delta_color="off")
+
+    view = view_picker("view_rev")
+    unit = M.UNIT[view]
+    pnl = M.period_pnl(tables, f_start, f_end, view)
+    pm = M.period_meta(pnl.index, f_start, f_end, view)
+    if pnl.empty:
+        st.info("No data in the selected date range.")
 
     c1, c2 = st.columns(2)
     with c1:
-        st.markdown("**Monthly revenue**")
-        fig = go.Figure(go.Bar(x=pnl.index, y=pnl.revenue, marker_color=BLUE,
-                               hovertemplate="%{x|%b %Y}<br>$%{y:,.0f}<extra></extra>"))
-        show(bar_round(style(fig, 300, legend=False, yfmt="$,.0s", xfmt="%b")), "rev_month")
+        st.markdown(f"**Revenue by {unit}**")
+        fig = go.Figure(go.Bar(x=pm.label, y=pnl.revenue, marker_color=BLUE, customdata=pm.hover,
+                               hovertemplate="%{customdata}<br>$%{y:,.0f}<extra></extra>"))
+        show(bar_round(period_axis(style(fig, 300, legend=False, yfmt="$,.0s"), pm, view)), "rev_period")
         st.caption("Florida pattern: AC repair surges May–Sep; winter is slow outside of installs and duct work.")
     with c2:
-        st.markdown("**Gross margin by month**")
-        fig = go.Figure(go.Scatter(x=pnl.index, y=pnl.gross_margin, mode="lines+markers", line=dict(color=BLUE, width=2),
-                                   marker=dict(size=8, line=dict(color="#fcfcfb", width=2)),
-                                   hovertemplate="%{x|%b %Y}<br>%{y:.1%}<extra></extra>", name="Gross margin"))
+        st.markdown(f"**Gross margin by {unit}**")
+        fig = go.Figure(go.Scatter(x=pm.label, y=pnl.gross_margin, mode="lines+markers", line=dict(color=BLUE, width=2),
+                                   marker=dict(size=8, line=dict(color="#fcfcfb", width=2)), customdata=pm.hover,
+                                   hovertemplate="%{customdata}<br>%{y:.1%}<extra></extra>", name="Gross margin"))
         fig.update_yaxes(rangemode="tozero")
-        show(style(fig, 300, legend=False, yfmt=".0%", xfmt="%b"), "margin_month")
-        st.caption("Summer mix shifts toward lower-margin installs and commercial work, so margin dips as revenue peaks.")
+        show(period_axis(style(fig, 300, legend=False, yfmt=".0%"), pm, view), "margin_period")
+        st.caption("Margin = gross profit ÷ revenue, recomputed from each period's totals. "
+                   "Summer mix shifts toward lower-margin installs and commercial work, so margin dips as revenue peaks.")
 
     c1, c2 = st.columns(2)
     sv = J.groupby("service_type").agg(jobs=("job_id", "count"), revenue=("revenue", "sum"),
@@ -224,63 +247,77 @@ with tab_rev:
             st.caption(f"Duct cleaning is {r.revenue / rev:.0%} of revenue but only {r.gross_profit / gp:.0%} of gross profit "
                        f"({r.margin:.0%} margin).")
     with c2:
-        st.markdown("**Revenue mix by month**")
-        mix = J.assign(month=J.date.dt.to_period("M").dt.to_timestamp()).groupby(["month", "service_type"]).revenue.sum().reset_index()
+        st.markdown(f"**Revenue mix by {unit}**")
         fig = go.Figure()
         for sname in SERVICE_COLORS:
-            d = mix[mix.service_type == sname]
-            fig.add_bar(x=d.month, y=d.revenue, name=sname, marker_color=SERVICE_COLORS[sname],
-                        marker_line=dict(color="#fcfcfb", width=1.5),
-                        hovertemplate=f"{sname}<br>%{{x|%b %Y}}<br>$%{{y:,.0f}}<extra></extra>")
+            d = M.resample_sum(J[J.service_type == sname], "date", ["revenue"], f_start, f_end, view)
+            fig.add_bar(x=pm.label, y=d.revenue, name=sname, marker_color=SERVICE_COLORS[sname],
+                        marker_line=dict(color="#fcfcfb", width=1.5), customdata=pm.hover,
+                        hovertemplate=f"{sname}<br>%{{customdata}}<br>$%{{y:,.0f}}<extra></extra>")
         fig.update_layout(barmode="stack")
-        show(style(fig, 300, yfmt="$,.0s", xfmt="%b"), "rev_mix")
+        show(period_axis(style(fig, 300, yfmt="$,.0s"), pm, view), "rev_mix")
 
-    st.markdown("**Monthly profit & loss (estimate)**")
-    tbl = pnl.reset_index(names="Month")
-    tbl["Month"] = tbl.Month.dt.strftime("%b %Y")
-    tbl = tbl[["Month", "revenue", "direct_costs", "gross_profit", "overhead_payroll", "operating_expenses",
+    note = M.partial_note(pm, view)
+    if note:
+        st.caption(note)
+
+    st.markdown(f"**Profit & loss by {unit} (estimate)**")
+    tbl = pnl.reset_index(drop=True)
+    tbl.insert(0, unit.capitalize(), list(pm.label))
+    tbl = tbl[[unit.capitalize(), "revenue", "direct_costs", "gross_profit", "overhead_payroll", "operating_expenses",
                "advertising", "net_profit", "net_margin"]]
-    tbl.columns = ["Month", "Revenue", "Job costs", "Gross profit", "Office payroll", "Operating expenses",
-                   "Advertising", "Net profit", "Net margin"]
+    tbl.columns = [M.AXIS_TITLE[view] if view == "Weekly" else unit.capitalize(), "Revenue", "Job costs", "Gross profit",
+                   "Office payroll", "Operating expenses", "Advertising", "Net profit", "Net margin"]
     money_cfg = {c: st.column_config.NumberColumn(format="$%,.0f") for c in tbl.columns[1:-1]}
     st.dataframe(tbl, hide_index=True, width='stretch',
                  column_config=money_cfg | {"Net margin": st.column_config.NumberColumn(format="percent")})
-    st.caption("Job costs = field labor + materials. Office payroll includes owner, sales, install helpers and employer taxes.")
+    st.caption("Job costs = field labor + materials. Office payroll includes owner, sales, install helpers and employer taxes."
+               + (" Payroll posts on the 15th and month-end, so weekly profit is lumpy." if view == "Weekly" else ""))
 
 # ================================================================ MARKETING
 with tab_mkt:
-    cm = M.channel_monthly(ads, jobs, f_start, f_end)
     cs = M.channel_summary(ads, jobs, f_start, f_end)
-    meta = cm[cm.channel == "Meta Ads"].sort_values("month")
-    meta_chg = M.safe_div(meta.cpl.iloc[-1], meta.cpl.iloc[0]) - 1 if len(meta) > 1 else np.nan
+    meta_m = M.channel_periods(ads, f_start, f_end, "Monthly").query("channel == 'Meta Ads'").cpl.dropna()  # headline: fixed monthly
+    meta_chg = M.safe_div(meta_m.iloc[-1], meta_m.iloc[0]) - 1 if len(meta_m) > 1 else np.nan
     k = st.columns(4)
     k[0].metric("Ad spend", M.money(A.spend.sum()))
     k[1].metric("Leads", f"{int(A.leads.sum()):,}")
-    k[2].metric("Blended cost per lead", f"${M.safe_div(A.spend.sum(), A.leads.sum()):,.0f}")
-    k[3].metric("Meta cost per lead", f"${meta.cpl.iloc[-1]:,.0f}" if len(meta) else "n/a",
+    k[2].metric("Blended cost per lead", f"${M.safe_div(A.spend.sum(), A.leads.sum()):,.0f}" if A.leads.sum() else "n/a")
+    k[3].metric("Meta cost per lead", f"${meta_m.iloc[-1]:,.0f}" if len(meta_m) else "n/a",
                 f"{meta_chg:+.0%} first→last month" if meta_chg == meta_chg else None, delta_color="inverse")
+
+    view = view_picker("view_mkt")
+    unit = M.UNIT[view]
+    cm = M.channel_periods(ads, f_start, f_end, view)
+    pm = M.period_meta(pd.DatetimeIndex(sorted(cm.period.unique())), f_start, f_end, view)
+    if A.empty:
+        st.info("No ad data in the selected date range.")
 
     c1, c2 = st.columns(2)
     with c1:
-        st.markdown("**Cost per lead by channel**")
+        st.markdown(f"**Cost per lead by channel, per {unit}**")
         fig = go.Figure()
         for ch, col in CHANNEL_COLORS.items():
-            d = cm[cm.channel == ch].sort_values("month")
-            fig.add_scatter(x=d.month, y=d.cpl, name=ch, mode="lines+markers", line=dict(color=col, width=3 if ch == "Meta Ads" else 2),
-                            marker=dict(size=8, line=dict(color="#fcfcfb", width=2)),
-                            hovertemplate=f"{ch}<br>%{{x|%b %Y}}<br>$%{{y:,.2f}} per lead<extra></extra>")
+            d = cm[cm.channel == ch].sort_values("period")
+            fig.add_scatter(x=pm.label, y=d.cpl, name=ch, mode="lines+markers", line=dict(color=col, width=3 if ch == "Meta Ads" else 2),
+                            marker=dict(size=8, line=dict(color="#fcfcfb", width=2)), customdata=pm.hover,
+                            hovertemplate=f"{ch}<br>%{{customdata}}<br>$%{{y:,.2f}} per lead<extra></extra>")
         fig.update_yaxes(rangemode="tozero")
-        show(style(fig, 330, yfmt="$,.0f", xfmt="%b"), "cpl")
-        st.caption("Meta is the only channel whose cost per lead trends steadily up; the others hover near their starting level.")
+        show(period_axis(style(fig, 330, yfmt="$,.0f"), pm, view), "cpl")
+        st.caption("Cost per lead = spend ÷ leads, recomputed from each period's totals. "
+                   "Meta is the only channel whose cost per lead trends steadily up.")
     with c2:
-        st.markdown("**Ad spend by channel**")
+        st.markdown(f"**Ad spend by channel, per {unit}**")
         fig = go.Figure()
         for ch, col in CHANNEL_COLORS.items():
-            d = cm[cm.channel == ch]
-            fig.add_bar(x=d.month, y=d.spend, name=ch, marker_color=col, marker_line=dict(color="#fcfcfb", width=1.5),
-                        hovertemplate=f"{ch}<br>%{{x|%b %Y}}<br>$%{{y:,.0f}}<extra></extra>")
+            d = cm[cm.channel == ch].sort_values("period")
+            fig.add_bar(x=pm.label, y=d.spend, name=ch, marker_color=col, marker_line=dict(color="#fcfcfb", width=1.5),
+                        customdata=pm.hover, hovertemplate=f"{ch}<br>%{{customdata}}<br>$%{{y:,.0f}}<extra></extra>")
         fig.update_layout(barmode="stack")
-        show(style(fig, 330, yfmt="$,.0s", xfmt="%b"), "ad_spend")
+        show(period_axis(style(fig, 330, yfmt="$,.0s"), pm, view), "ad_spend")
+    note = M.partial_note(pm, view)
+    if note:
+        st.caption(note)
 
     st.markdown("**Channel scorecard**")
     cs2 = cs.rename(columns={"channel": "Channel", "spend": "Spend", "leads": "Leads", "cpl": "Cost / lead",

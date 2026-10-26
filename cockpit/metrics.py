@@ -11,6 +11,8 @@ BUCKETS = ["Current", "1-30 days late", "31-60 days late", "61-90 days late", "9
 
 
 def money(x: float, signed: bool = False) -> str:
+    if x != x:  # NaN
+        return "n/a"
     sign = ("+" if x >= 0 else "-") if signed else ("-" if x < 0 else "")
     x = abs(x)
     if x >= 1_000_000:
@@ -23,6 +25,8 @@ def money(x: float, signed: bool = False) -> str:
 
 
 def pct(x: float, digits: int = 0) -> str:
+    if x != x:  # NaN
+        return "n/a"
     return f"{x * 100:.{digits}f}%"
 
 
@@ -110,24 +114,83 @@ def late_stats(invoices: pd.DataFrame, start, end) -> dict:
 
 
 # ---------------------------------------------------------------- P&L / cash
-def monthly_pnl(t: dict[str, pd.DataFrame], start, end) -> pd.DataFrame:
-    j = between(t["jobs"], "date", start, end)
-    pr = between(t["payroll"], "pay_date", start, end)
-    ex = between(t["expenses"], "date", start, end)
-    ad = between(t["ad_spend"], "date", start, end)
-    m = lambda s: s.dt.to_period("M").dt.to_timestamp()
-    df = pd.DataFrame({
-        "revenue": j.groupby(m(j.date)).revenue.sum(),
-        "direct_costs": j.groupby(m(j.date))[["labor_cost", "materials_cost"]].sum().sum(axis=1),
-        "overhead_payroll": (pr[pr.cost_class == "overhead"].assign(c=lambda d: d.gross_pay + d.employer_taxes)
-                             .groupby(m(pr[pr.cost_class == "overhead"].pay_date)).c.sum()),
-        "operating_expenses": ex.groupby(m(ex.date)).amount.sum(),
-        "advertising": ad.groupby(m(ad.date)).spend.sum(),
-    }).fillna(0)
+# ---------------------------------------------------------------- "View by" periods
+VIEWS = ["Weekly", "Monthly", "Quarterly"]
+UNIT = {"Weekly": "week", "Monthly": "month", "Quarterly": "quarter"}
+AXIS_TITLE = {"Weekly": "Week beginning (Monday)", "Monthly": "Month", "Quarterly": "Calendar quarter"}
+_RESAMPLE = {"Weekly": "W-MON", "Monthly": "MS", "Quarterly": "QS"}  # W-MON + closed/label left = Monday-start weeks
+_STEP = {"Weekly": "7D", "Monthly": "MS", "Quarterly": "QS"}
+
+
+def period_starts(start, end, view: str) -> pd.DatetimeIndex:
+    """Start date of every period that touches [start, end] (empty if end < start)."""
+    start, end = pd.Timestamp(start).normalize(), pd.Timestamp(end).normalize()
+    if end < start:
+        return pd.DatetimeIndex([])
+    first = {"Weekly": monday_of(start), "Monthly": start.to_period("M").start_time,
+             "Quarterly": start.to_period("Q").start_time}[view]
+    return pd.date_range(first, end, freq=_STEP[view])
+
+
+def period_end(ps: pd.Timestamp, view: str) -> pd.Timestamp:
+    if view == "Weekly":
+        return ps + pd.Timedelta(days=6)
+    return ps.to_period("M" if view == "Monthly" else "Q").end_time.normalize()
+
+
+def resample_sum(df: pd.DataFrame, col: str, value_cols: list[str], start, end, view: str) -> pd.DataFrame:
+    """Sum `value_cols` per period (Monday weeks / calendar months / calendar quarters).
+    Every period in the range is present, with 0 where there were no rows."""
+    idx = period_starts(start, end, view)
+    d = between(df, col, start, end)
+    s = d.set_index(col)[value_cols].resample(_RESAMPLE[view], closed="left", label="left").sum()
+    return s.reindex(idx, fill_value=0.0).astype(float)
+
+
+def period_meta(idx: pd.DatetimeIndex, start, end, view: str) -> pd.DataFrame:
+    """Axis label, hover text and partial-period flag for each period start in `idx`."""
+    start, end = pd.Timestamp(start).normalize(), pd.Timestamp(end).normalize()
+    rows = []
+    for ps in idx:
+        pe = period_end(ps, view)
+        partial = ps < start or pe > end
+        if view == "Weekly":
+            name, hover = f"{ps:%b} {ps.day} '{ps:%y}", f"Week of {ps:%b} {ps.day}, {ps.year}"
+        elif view == "Monthly":
+            name = hover = f"{ps:%b %Y}"
+        else:
+            name = hover = f"Q{ps.quarter} {ps.year}"
+        rows.append(dict(start=ps, name=name, partial=partial,
+                         label=name + ("*" if partial else ""),
+                         hover=hover + (" (partial period)" if partial else "")))
+    return pd.DataFrame(rows, columns=["start", "name", "partial", "label", "hover"])
+
+
+def partial_note(meta: pd.DataFrame, view: str) -> str:
+    p = meta[meta.partial]
+    if p.empty:
+        return ""
+    names = ", ".join(p.name)
+    return (f"* Partial period: {names}. Only part of that {UNIT[view]} falls inside the selected date range, "
+            f"so its totals are lower than a full {UNIT[view]}.")
+
+
+def period_pnl(t: dict[str, pd.DataFrame], start, end, view: str = "Monthly") -> pd.DataFrame:
+    """P&L per period. Margins are recomputed from the summed dollars, never averaged."""
+    pr = t["payroll"]
+    pr = pr[pr.cost_class == "overhead"].assign(overhead_payroll=lambda d: d.gross_pay + d.employer_taxes)
+    df = pd.concat([
+        resample_sum(t["jobs"], "date", ["revenue", "labor_cost", "materials_cost"], start, end, view),
+        resample_sum(pr, "pay_date", ["overhead_payroll"], start, end, view),
+        resample_sum(t["expenses"], "date", ["amount"], start, end, view).rename(columns={"amount": "operating_expenses"}),
+        resample_sum(t["ad_spend"], "date", ["spend"], start, end, view).rename(columns={"spend": "advertising"}),
+    ], axis=1)
+    df["direct_costs"] = df.labor_cost + df.materials_cost
     df["gross_profit"] = df.revenue - df.direct_costs
     df["net_profit"] = df.gross_profit - df.overhead_payroll - df.operating_expenses - df.advertising
-    df["gross_margin"] = df.gross_profit / df.revenue
-    df["net_margin"] = df.net_profit / df.revenue
+    rev = df.revenue.replace(0, np.nan)
+    df["gross_margin"] = df.gross_profit / rev
+    df["net_margin"] = df.net_profit / rev
     return df
 
 
@@ -153,11 +216,14 @@ def monthly_cash(t: dict[str, pd.DataFrame], start, end) -> pd.DataFrame:
 
 
 # ---------------------------------------------------------------- marketing
-def channel_monthly(ads: pd.DataFrame, jobs: pd.DataFrame, start, end) -> pd.DataFrame:
-    a = between(ads, "date", start, end)
-    a = a.assign(month=a.date.dt.to_period("M").dt.to_timestamp())
-    g = a.groupby(["month", "channel"], as_index=False)[["spend", "leads", "clicks", "impressions"]].sum()
-    g["cpl"] = g.spend / g.leads
+def channel_periods(ads: pd.DataFrame, start, end, view: str = "Monthly") -> pd.DataFrame:
+    """Spend / leads per channel per period; cost per lead = summed spend / summed leads."""
+    parts = []
+    for ch in sorted(ads.channel.unique()):
+        g = resample_sum(ads[ads.channel == ch], "date", ["spend", "leads", "clicks", "impressions"], start, end, view)
+        parts.append(g.rename_axis("period").reset_index().assign(channel=ch))
+    g = pd.concat(parts, ignore_index=True)
+    g["cpl"] = g.spend / g.leads.replace(0, np.nan)
     return g
 
 
