@@ -1,4 +1,4 @@
-﻿# Owner's Cockpit - Sunshine Comfort HVAC (demo)
+# Owner's Cockpit - Sunshine Comfort HVAC (demo)
 
 Streamlit dashboard for a fictional Fort Lauderdale HVAC company (~$6.2M revenue, 28 employees).
 Tabs: This Week, Revenue & Margin, Marketing, Team, Cash & AR.

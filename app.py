@@ -1,4 +1,4 @@
-﻿"""Owner's Cockpit - Sunshine Comfort HVAC (demo). Run: streamlit run app.py"""
+"""Owner's Cockpit - Sunshine Comfort HVAC (demo). Run: streamlit run app.py"""
 from __future__ import annotations
 
 import numpy as np
@@ -9,7 +9,7 @@ import streamlit as st
 from cockpit import data_sources
 from cockpit import metrics as M
 
-st.set_page_config(page_title="Owner's Cockpit - Sunshine Comfort HVAC", page_icon="â˜€ï¸", layout="wide")
+st.set_page_config(page_title="Owner's Cockpit - Sunshine Comfort HVAC", page_icon="☀️", layout="wide")
 
 # ---------------------------------------------------------------- style
 INK, MUTED, GRID = "#0b0b0b", "#898781", "#e1e0d9"
@@ -18,8 +18,8 @@ GREY = "#c3c2b7"
 CHANNEL_COLORS = {"Meta Ads": BLUE, "Google Ads": ORANGE, "Google LSA": AQUA, "Yelp/Angi": MAGENTA}
 SERVICE_COLORS = {"AC Replacement": BLUE, "AC Repair": ORANGE, "Commercial Service": AQUA,
                   "Duct Cleaning": MAGENTA, "Maintenance": YELLOW, "Heating Repair": VIOLET}
-TONES = {"good": ("âœ…", "On track", "#006300"), "warn": ("âš ï¸", "Watch", "#8a5a00"),
-         "bad": ("ðŸ”´", "Needs attention", "#b02a2a"), "info": ("ðŸ’¡", "Opportunity", "#184f95")}
+TONES = {"good": ("✅", "On track", "#006300"), "warn": ("⚠️", "Watch", "#8a5a00"),
+         "bad": ("🔴", "Needs attention", "#b02a2a"), "info": ("💡", "Opportunity", "#184f95")}
 
 st.markdown("""
 <style>
@@ -75,8 +75,8 @@ d_min, d_max = jobs.date.min().date(), jobs.date.max().date()
 
 # ---------------------------------------------------------------- sidebar
 with st.sidebar:
-    st.markdown("### â˜€ï¸ Sunshine Comfort HVAC")
-    st.caption("Fort Lauderdale, FL Â· 28 employees")
+    st.markdown("### ☀️ Sunshine Comfort HVAC")
+    st.caption("Fort Lauderdale, FL · 28 employees")
     st.markdown("**Date range**  \n<span style='color:#52514e;font-size:.85rem'>Applies to every tab except This Week.</span>",
                 unsafe_allow_html=True)
     picked = st.date_input("Date range", value=(d_min, d_max), min_value=d_min, max_value=d_max,
@@ -93,7 +93,7 @@ with st.sidebar:
     st.markdown("**'This Week' reference week**  \n<span style='color:#52514e;font-size:.85rem'>"
                 "Pretend it's the Monday after this week.</span>", unsafe_allow_html=True)
     ref = st.selectbox("Reference week", weeks, index=idx, label_visibility="collapsed",
-                       format_func=lambda w: f"{w:%b %d} â€“ {M.week_end(w):%b %d, %Y}")
+                       format_func=lambda w: f"{w:%b %d} – {M.week_end(w):%b %d, %Y}")
     st.divider()
     st.caption(f"Data source: **{source_name}**")
     st.caption("Demo company and numbers are fictional.")
@@ -103,7 +103,7 @@ J = M.between(jobs, "date", f_start, f_end)
 A = M.between(ads, "date", f_start, f_end)
 
 st.title("Owner's Cockpit")
-st.markdown(f"<p class='sub'>Sunshine Comfort HVAC Â· {f_start:%b %d, %Y} â€“ {f_end:%b %d, %Y}</p>", unsafe_allow_html=True)
+st.markdown(f"<p class='sub'>Sunshine Comfort HVAC · {f_start:%b %d, %Y} – {f_end:%b %d, %Y}</p>", unsafe_allow_html=True)
 tab_week, tab_rev, tab_mkt, tab_team, tab_cash = st.tabs(
     ["This Week", "Revenue & Margin", "Marketing", "Team", "Cash & AR"])
 
@@ -113,12 +113,12 @@ with tab_week:
     prev = ref - pd.Timedelta(days=7)
     cur, pre = M.week_kpis(tables, ref), M.week_kpis(tables, prev)
 
-    st.subheader(f"Monday Morning Summary Â· week of {ref:%b %d} â€“ {w_end:%b %d, %Y}")
+    st.subheader(f"Monday Morning Summary · week of {ref:%b %d} – {w_end:%b %d, %Y}")
     with st.container(border=True):
         for ins in M.monday_summary(tables, ref):
             icon, label, color = TONES[ins["tone"]]
             st.markdown(
-                f"<div class='insight' style='--c:{color}'><div class='tag'>{icon} {ins['topic']} Â· {label}</div>"
+                f"<div class='insight' style='--c:{color}'><div class='tag'>{icon} {ins['topic']} · {label}</div>"
                 f"<div class='head'>{ins['headline']}</div><div class='body'>{ins['body']}</div></div>",
                 unsafe_allow_html=True)
 
@@ -193,7 +193,7 @@ with tab_rev:
         fig = go.Figure(go.Bar(x=pnl.index, y=pnl.revenue, marker_color=BLUE,
                                hovertemplate="%{x|%b %Y}<br>$%{y:,.0f}<extra></extra>"))
         show(bar_round(style(fig, 300, legend=False, yfmt="$,.0s", xfmt="%b")), "rev_month")
-        st.caption("Florida pattern: AC repair surges Mayâ€“Sep; winter is slow outside of installs and duct work.")
+        st.caption("Florida pattern: AC repair surges May–Sep; winter is slow outside of installs and duct work.")
     with c2:
         st.markdown("**Gross margin by month**")
         fig = go.Figure(go.Scatter(x=pnl.index, y=pnl.gross_margin, mode="lines+markers", line=dict(color=BLUE, width=2),
@@ -258,7 +258,7 @@ with tab_mkt:
     k[1].metric("Leads", f"{int(A.leads.sum()):,}")
     k[2].metric("Blended cost per lead", f"${M.safe_div(A.spend.sum(), A.leads.sum()):,.0f}")
     k[3].metric("Meta cost per lead", f"${meta.cpl.iloc[-1]:,.0f}" if len(meta) else "n/a",
-                f"{meta_chg:+.0%} firstâ†’last month" if meta_chg == meta_chg else None, delta_color="inverse")
+                f"{meta_chg:+.0%} first→last month" if meta_chg == meta_chg else None, delta_color="inverse")
 
     c1, c2 = st.columns(2)
     with c1:
@@ -367,7 +367,7 @@ with tab_cash:
     k[1].metric("Past due", M.money(over.amount.sum()), f"{M.safe_div(over.amount.sum(), snap.amount.sum()):.0%} of open AR", delta_color="off")
     k[2].metric("Invoices paid late", M.pct(ls["late_rate"], 1))
     k[3].metric("Avg days to get paid", f"{ls['avg_days_to_pay']:.0f}")
-    k[4].metric("Net cash flow", M.money(cash.net_cash.sum(), signed=True), "collections âˆ’ all outflows", delta_color="off")
+    k[4].metric("Net cash flow", M.money(cash.net_cash.sum(), signed=True), "collections − all outflows", delta_color="off")
 
     c1, c2 = st.columns(2)
     with c1:

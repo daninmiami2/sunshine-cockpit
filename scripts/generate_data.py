@@ -1,4 +1,4 @@
-﻿"""Generate 12 months (Oct 2025 - Sep 2026) of synthetic data for Sunshine Comfort HVAC.
+"""Generate 12 months (Oct 2025 - Sep 2026) of synthetic data for Sunshine Comfort HVAC.
 
 Fictional company: Fort Lauderdale, FL - ~$6.2M revenue, 28 employees.
 Writes jobs, payroll, ad_spend, invoices, expenses CSVs to ../data. Deterministic (seeded).
@@ -248,11 +248,11 @@ exp_rows.append(dict(date=pd.Timestamp("2026-04-14"), category="Vehicle purchase
 expenses = pd.DataFrame(exp_rows).sort_values("date").reset_index(drop=True)
 
 # ---------------------------------------------------------------- write
-jobs.drop(columns=["ym", "period_end"]).to_csv(OUT / "jobs.csv", index=False)
-payroll.to_csv(OUT / "payroll.csv", index=False)
-ads.to_csv(OUT / "ad_spend.csv", index=False)
-invoices.to_csv(OUT / "invoices.csv", index=False)
-expenses.to_csv(OUT / "expenses.csv", index=False)
+jobs.drop(columns=["ym", "period_end"]).to_csv(OUT / "jobs.csv", index=False, encoding="utf-8")
+payroll.to_csv(OUT / "payroll.csv", index=False, encoding="utf-8")
+ads.to_csv(OUT / "ad_spend.csv", index=False, encoding="utf-8")
+invoices.to_csv(OUT / "invoices.csv", index=False, encoding="utf-8")
+expenses.to_csv(OUT / "expenses.csv", index=False, encoding="utf-8")
 
 # ---------------------------------------------------------------- sanity report
 rev = jobs.revenue.sum()

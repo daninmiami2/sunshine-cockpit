@@ -1,4 +1,4 @@
-﻿"""Business metrics and plain-English insights. Pure pandas - no Streamlit imports."""
+"""Business metrics and plain-English insights. Pure pandas - no Streamlit imports."""
 from __future__ import annotations
 
 from dataclasses import dataclass

@@ -76,7 +76,7 @@ class CsvSource(DataSource):
         path = self.dir / f"{table}.csv"
         if not path.exists():
             raise FileNotFoundError(f"{path} missing - run `python scripts/generate_data.py`")
-        return pd.read_csv(path, parse_dates=DATE_COLS[table])
+        return pd.read_csv(path, parse_dates=DATE_COLS[table], encoding="utf-8")
 
     def jobs(self): return self._read("jobs")
     def payroll(self): return self._read("payroll")
