@@ -20,4 +20,5 @@ streamlit run app.py
 ## Deploy to Streamlit Community Cloud
 1. Push this repo to GitHub.
 2. share.streamlit.io > New app > pick the repo, branch `main`, main file `app.py`.
-3. Advanced settings: Python 3.12. Paste secrets from `.streamlit/secrets.toml.example` if needed.
+3. Advanced settings: Python 3.12 (also recorded in `.python-version`). `requirements.txt` pins exact versions so the cloud matches local.
+   After pushing a change that touches `cockpit/*.py`, use **Manage app > Reboot app** so Streamlit reloads the modules. Paste secrets from `.streamlit/secrets.toml.example` if needed.

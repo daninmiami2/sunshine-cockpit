@@ -185,6 +185,11 @@ def period_pnl(t: dict[str, pd.DataFrame], start, end, view: str = "Monthly") ->
         resample_sum(t["expenses"], "date", ["amount"], start, end, view).rename(columns={"amount": "operating_expenses"}),
         resample_sum(t["ad_spend"], "date", ["spend"], start, end, view).rename(columns={"spend": "advertising"}),
     ], axis=1)
+    # Guarantee every column downstream code reads exists, even if a source table is empty or lacks one.
+    for c in ("revenue", "labor_cost", "materials_cost", "overhead_payroll", "operating_expenses", "advertising"):
+        if c not in df.columns:
+            df[c] = 0.0
+    df = df.fillna(0.0)
     df["direct_costs"] = df.labor_cost + df.materials_cost
     df["gross_profit"] = df.revenue - df.direct_costs
     df["net_profit"] = df.gross_profit - df.overhead_payroll - df.operating_expenses - df.advertising
