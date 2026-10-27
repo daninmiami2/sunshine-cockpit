@@ -157,9 +157,9 @@ def period_meta(idx: pd.DatetimeIndex, start, end, view: str) -> pd.DataFrame:
         if view == "Weekly":
             name, hover = f"{ps:%b} {ps.day} '{ps:%y}", f"Week of {ps:%b} {ps.day}, {ps.year}"
         elif view == "Monthly":
-            name = hover = f"{ps:%b %Y}"
+            name, hover = f"{ps:%b} '{ps:%y}", f"{ps:%B %Y}"
         else:
-            name = hover = f"Q{ps.quarter} {ps.year}"
+            name, hover = f"Q{ps.quarter} '{ps:%y}", f"Q{ps.quarter} {ps.year}"
         rows.append(dict(start=ps, name=name, partial=partial,
                          label=name + ("*" if partial else ""),
                          hover=hover + (" (partial period)" if partial else "")))
@@ -288,7 +288,7 @@ def monday_summary(t: dict[str, pd.DataFrame], start: pd.Timestamp) -> list[dict
     meta_cpj, lsa_cpj = sources.loc["Meta Ads", "cost_per_job"], sources.loc["Google LSA", "cost_per_job"]
     out.append(dict(
         tone="bad" if rise > 0.2 else "warn" if rise > 0.05 else "good", topic="Marketing",
-        headline=f"Facebook/Instagram leads now cost {money(cpl_now)} each, {pct(rise)} more than when the year started.",
+        headline=f"Over the last 4 weeks, Facebook/Instagram leads cost {money(cpl_now)} each, {pct(rise)} more than in the first month of data.",
         body=(f"Meta was {money(cpl_then)} per lead in the first month of data. Over the last 4 weeks it costs {money(meta_cpj)} "
               f"in ad spend to land one booked job from Meta versus {money(lsa_cpj)} from Google Local Services "
               f"({money(lsa_cpl)} per lead). Consider moving part of the Meta budget to LSA.")))

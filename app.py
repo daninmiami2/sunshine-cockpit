@@ -99,7 +99,7 @@ def period_axis(fig: go.Figure, pm: pd.DataFrame, view: str) -> go.Figure:
     ticks = labels[::4] if view == "Weekly" else labels
     fig.update_xaxes(type="category", categoryorder="array", categoryarray=labels, tickmode="array",
                      tickvals=ticks, ticktext=ticks, title=dict(text=M.AXIS_TITLE[view], font=dict(color=MUTED, size=11)),
-                     tickangle=-45 if view == "Weekly" or len(labels) > 12 else 0)
+                     tickangle=-45 if view in ("Weekly", "Monthly") or len(labels) > 6 else 0)
     return fig
 
 
@@ -172,7 +172,7 @@ with tab_week:
     k[1].metric("Gross profit", M.money(cur.gross_profit), f"{M.delta(cur.gross_profit, pre.gross_profit):+.0%}")
     k[2].metric("Gross margin", M.pct(cur.margin, 1), f"{(cur.margin - pre.margin) * 100:+.1f} pts")
     k[3].metric("Jobs completed", f"{cur.jobs}", f"{cur.jobs - pre.jobs:+d}")
-    k[4].metric("Cost per lead", f"${cur.cpl:,.0f}", f"{M.delta(cur.cpl, pre.cpl):+.0%}", delta_color="inverse")
+    k[4].metric("Cost per lead (this week)", f"${cur.cpl:,.0f}", f"{M.delta(cur.cpl, pre.cpl):+.0%}", delta_color="inverse")
     k[5].metric("Cash collected", M.money(cur.collected), f"{M.delta(cur.collected, pre.collected):+.0%}")
 
     left, right = st.columns([3, 2])
@@ -312,8 +312,9 @@ with tab_mkt:
     k[0].metric("Ad spend", M.money(A.spend.sum()))
     k[1].metric("Leads", f"{int(A.leads.sum()):,}")
     k[2].metric("Blended cost per lead", f"${M.safe_div(A.spend.sum(), A.leads.sum()):,.0f}" if A.leads.sum() else "n/a")
-    k[3].metric("Meta cost per lead", f"${meta_m.iloc[-1]:,.0f}" if len(meta_m) else "n/a",
-                f"{meta_chg:+.0%} first→last month" if meta_chg == meta_chg else None, delta_color="inverse")
+    k[3].metric("Meta cost per lead (latest month)", f"${meta_m.iloc[-1]:,.0f}" if len(meta_m) else "n/a",
+                f"{meta_chg:+.0%} vs. first month (${meta_m.iloc[0]:,.0f})" if meta_chg == meta_chg else None,
+                delta_color="inverse")
 
     view = view_picker("view_mkt")
     unit = M.UNIT[view]
