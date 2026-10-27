@@ -57,7 +57,8 @@ def money_axis(fig: go.Figure, values, axis: str = "y") -> go.Figure:
     """Dollar axis with explicit 'nice' ticks so labels never repeat ($0.5M, $1.0M, $1.5M ... or $50K, $100K ...).
     d3's '$.0s' rounds to one significant digit, which turns 1.5M and 2.4M into '$2M'."""
     v = np.asarray(pd.Series(values, dtype=float).dropna())
-    hi, lo = (float(v.max()), float(min(v.min(), 0))) if len(v) else (0.0, 0.0)
+    # Always include zero so all-negative or single-value data still gets a sensible, distinct set of ticks.
+    hi, lo = (float(max(v.max(), 0)), float(min(v.min(), 0))) if len(v) else (0.0, 0.0)
     span = max(hi - lo, 5.0)  # keep whole-dollar steps (and distinct labels) for empty/zero data
     raw = span / 5
     mag = 10 ** np.floor(np.log10(raw))
@@ -167,13 +168,14 @@ with tab_week:
                 f"<div class='head'>{ins['headline']}</div><div class='body'>{ins['body']}</div></div>",
                 unsafe_allow_html=True)
 
-    k = st.columns(6)
+    k = st.columns(3) + st.columns(3)  # two rows of three so labels and deltas never truncate
     k[0].metric("Revenue", M.money(cur.revenue), f"{M.delta(cur.revenue, pre.revenue):+.0%} vs prior wk")
-    k[1].metric("Gross profit", M.money(cur.gross_profit), f"{M.delta(cur.gross_profit, pre.gross_profit):+.0%}")
-    k[2].metric("Gross margin", M.pct(cur.margin, 1), f"{(cur.margin - pre.margin) * 100:+.1f} pts")
-    k[3].metric("Jobs completed", f"{cur.jobs}", f"{cur.jobs - pre.jobs:+d}")
-    k[4].metric("Cost per lead (this week)", f"${cur.cpl:,.0f}", f"{M.delta(cur.cpl, pre.cpl):+.0%}", delta_color="inverse")
-    k[5].metric("Cash collected", M.money(cur.collected), f"{M.delta(cur.collected, pre.collected):+.0%}")
+    k[1].metric("Gross profit", M.money(cur.gross_profit), f"{M.delta(cur.gross_profit, pre.gross_profit):+.0%} vs prior wk")
+    k[2].metric("Gross margin", M.pct(cur.margin, 1), f"{(cur.margin - pre.margin) * 100:+.1f} pts vs prior wk")
+    k[3].metric("Jobs completed", f"{cur.jobs}", f"{cur.jobs - pre.jobs:+d} vs prior wk")
+    k[4].metric("Cost per lead (this week, all channels)", f"${cur.cpl:,.0f}",
+                f"{M.delta(cur.cpl, pre.cpl):+.0%} vs prior wk", delta_color="inverse")
+    k[5].metric("Cash collected", M.money(cur.collected), f"{M.delta(cur.collected, pre.collected):+.0%} vs prior wk")
 
     left, right = st.columns([3, 2])
     with left:
@@ -212,7 +214,7 @@ with tab_week:
                            "Margin": st.column_config.ProgressColumn(format="percent", min_value=0, max_value=0.7),
                            "Callbacks": st.column_config.NumberColumn(format="percent")})
     with c2:
-        st.markdown("**Past-due invoices to chase (as of Sunday)**")
+        st.markdown(f"**Past-due invoices to chase (as of {w_end:%b} {w_end.day})**")
         od = M.ar_open(invoices, w_end)
         od = od[od.days_late > 0].sort_values("amount", ascending=False).head(8)
         st.dataframe(od[["customer", "amount", "due_date", "days_late"]].rename(
@@ -269,7 +271,7 @@ with tab_rev:
             hovertemplate="%{y}<br>Margin %{x:.1%}<extra></extra>"))
         fig.update_xaxes(range=[0, 0.7], tickformat=".0%")
         fig.update_yaxes(showgrid=False)
-        show(bar_round(style(fig, 300, legend=False)), "svc_margin")
+        show(bar_round(style(fig, 300, legend=False, xfmt=".0%")), "svc_margin")
         dcl = sv[sv.service_type == "Duct Cleaning"]
         if len(dcl):
             r = dcl.iloc[0]
@@ -387,21 +389,25 @@ with tab_team:
             hovertemplate="%{y}<br>Margin %{x:.1%}<extra></extra>"))
         fig.update_xaxes(range=[0, 0.7], tickformat=".0%")
         fig.update_yaxes(showgrid=False)
-        show(bar_round(style(fig, 400, legend=False)), "tech_margin")
+        show(bar_round(style(fig, 400, legend=False, xfmt=".0%")), "tech_margin")
         st.caption("Orange = Marcus Reyes. Grey = Ray Thompson, who runs the duct-cleaning crew (a 12% margin service).")
     with c2:
         st.markdown("**Revenue vs. margin per tech**")
         fig = go.Figure(go.Scatter(
-            x=tt.revenue, y=tt.margin, mode="markers+text", text=tt.tech.str.split().str[0], textposition="top center",
+            x=tt.revenue, y=tt.margin, mode="markers+text", text=tt.tech.str.split().str[0],
+            # alternate label sides (by margin rank) so neighbouring points don't print on top of each other
+            textposition=[("top center", "bottom center", "middle right", "middle left")[int(r) % 4]
+                          for r in tt.margin.rank(method="first")],
             textfont=dict(size=11, color="#52514e"),
             marker=dict(size=14, color=[ORANGE if t == "Marcus Reyes" else BLUE for t in tt.tech],
                         line=dict(color="#fcfcfb", width=2)),
             customdata=np.stack([tt.tech, tt.jobs], axis=-1),
             hovertemplate="%{customdata[0]}<br>Revenue $%{x:,.0f}<br>Margin %{y:.1%}<br>%{customdata[1]} jobs<extra></extra>"))
-        fig.update_yaxes(tickformat=".0%", title="Gross margin")
+        fig = style(fig, 400, legend=False, yfmt=".0%")  # style() resets tick formats, so pass the % format through it
+        fig.update_yaxes(title="Gross margin", range=[0, max(0.7, float(tt.margin.max()) + 0.05)])
         money_axis(fig, tt.revenue, axis="x")
         fig.update_xaxes(title="Revenue")
-        show(style(fig, 400, legend=False), "tech_scatter")
+        show(fig, "tech_scatter")
 
     st.markdown("**Technician detail**")
     td = tt[["tech", "jobs", "revenue", "avg_ticket", "margin", "gp_per_hour", "upsell", "callbacks"]]
@@ -430,12 +436,17 @@ with tab_cash:
     over = snap[snap.days_late > 0]
     ls = M.late_stats(invoices, f_start, f_end)
     cash = M.monthly_cash(tables, f_start, f_end)
-    k = st.columns(5)
-    k[0].metric("Open receivables", M.money(snap.amount.sum()))
-    k[1].metric("Past due", M.money(over.amount.sum()), f"{M.safe_div(over.amount.sum(), snap.amount.sum()):.0%} of open AR", delta_color="off")
+    asof_txt = f"{asof:%b} {asof.day}"
+    k = st.columns(3) + st.columns(2)
+    k[0].metric(f"Open receivables (as of {asof_txt})", M.money(snap.amount.sum()),
+                help="Everything billed and not yet paid, whether or not it is due yet.")
+    k[1].metric(f"Past due (as of {asof_txt})", M.money(over.amount.sum()),
+                f"{M.pct(M.safe_div(over.amount.sum(), snap.amount.sum()))} of open receivables", delta_color="off",
+                help="Unpaid invoices whose due date has passed. Same measure as the This Week tab, just a different date.")
     k[2].metric("Invoices paid late", M.pct(ls["late_rate"], 1))
     k[3].metric("Avg days to get paid", f"{ls['avg_days_to_pay']:.0f}")
-    k[4].metric("Net cash flow", M.money(cash.net_cash.sum(), signed=True), "collections − all outflows", delta_color="off")
+    k[4].metric("Net cash flow", M.money(cash.net_cash.sum(), signed=True),
+                help="Collections minus materials, payroll, operating expenses and advertising over the selected range.")
 
     c1, c2 = st.columns(2)
     with c1:
@@ -478,7 +489,8 @@ with tab_cash:
         n=("invoice_id", "count"), late=("late", "mean"))
     chronic = chronic[(chronic.n >= 8) & (chronic.late >= 0.3)].sort_values("late", ascending=False)
     if len(chronic):
+        top, extra = chronic.head(5), len(chronic) - 5
         st.warning("Chronic late payers (30%+ of invoices late): " +
-                   ", ".join(f"**{c}** ({r.late:.0%} of {int(r.n)})" for c, r in chronic.iterrows()) +
-                   ". Consider tighter terms or deposits.")
+                   ", ".join(f"**{c}** ({r.late:.0%} of {int(r.n)})" for c, r in top.iterrows()) +
+                   (f", +{extra} more" if extra > 0 else "") + ". Consider tighter terms or deposits.")
 

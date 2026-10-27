@@ -318,8 +318,9 @@ def monday_summary(t: dict[str, pd.DataFrame], start: pd.Timestamp) -> list[dict
         n_severe = (over.days_late > 30).sum()
         out.append(dict(
             tone="bad" if over.amount.sum() > 40_000 else "warn", topic="Cash",
-            headline=f"{money(over.amount.sum())} is past due across {len(over)} invoices.",
-            body=(f"The biggest is {by_c.index[0]} at {money(by_c.iloc[0])}; {n_severe} invoices are more than 30 days late. "
+            headline=f"{money(over.amount.sum())} is past due across {len(over)} invoices as of {end:%b} {end.day}.",
+            body=(f"The biggest past-due account is {by_c.index[0]} at {money(by_c.iloc[0])} (past-due invoices only, "
+                  f"not its total balance); {n_severe} invoices are more than 30 days late. "
                   f"A call from you on the top three accounts is worth more than any ad this week.")))
     else:
         out.append(dict(tone="good", topic="Cash", headline="No invoices are past due.",
