@@ -53,6 +53,35 @@ def show(fig: go.Figure, key: str) -> None:
     st.plotly_chart(fig, width='stretch', config={"displayModeBar": False}, key=key)
 
 
+def money_axis(fig: go.Figure, values, axis: str = "y") -> go.Figure:
+    """Dollar axis with explicit 'nice' ticks so labels never repeat ($0.5M, $1.0M, $1.5M ... or $50K, $100K ...).
+    d3's '$.0s' rounds to one significant digit, which turns 1.5M and 2.4M into '$2M'."""
+    v = np.asarray(pd.Series(values, dtype=float).dropna())
+    hi, lo = (float(v.max()), float(min(v.min(), 0))) if len(v) else (0.0, 0.0)
+    span = max(hi - lo, 5.0)  # keep whole-dollar steps (and distinct labels) for empty/zero data
+    raw = span / 5
+    mag = 10 ** np.floor(np.log10(raw))
+    step = next(m * mag for m in (1, 2, 2.5, 5, 10) if m * mag >= raw)
+    ticks = np.arange(np.floor(lo / step) * step, hi + step * 1.0001, step)
+    big = max(abs(hi), abs(lo)) >= 1_000_000
+
+    def label(t: float) -> str:
+        if abs(t) < 1e-9:
+            return "$0"
+        sign = "-" if t < 0 else ""
+        if big:
+            dec = 1 if round(step / 1e5) == step / 1e5 else 2
+            return f"{sign}${abs(t) / 1e6:.{dec}f}M"
+        if abs(t) >= 1_000:
+            dec = 0 if round(step / 1e3) == step / 1e3 else 1
+            return f"{sign}${abs(t) / 1e3:.{dec}f}K"
+        return f"{sign}${abs(t):,.0f}"
+
+    upd = fig.update_yaxes if axis == "y" else fig.update_xaxes
+    upd(tickmode="array", tickvals=list(ticks), ticktext=[label(t) for t in ticks], tickformat=None)
+    return fig
+
+
 def bar_round(fig):  # thin bars, no outline
     fig.update_traces(marker_line_width=0, selector=dict(type="bar"))
     return fig
@@ -214,7 +243,7 @@ with tab_rev:
         st.markdown(f"**Revenue by {unit}**")
         fig = go.Figure(go.Bar(x=pm.label, y=pnl.revenue, marker_color=BLUE, customdata=pm.hover,
                                hovertemplate="%{customdata}<br>$%{y:,.0f}<extra></extra>"))
-        show(bar_round(period_axis(style(fig, 300, legend=False, yfmt="$,.0s"), pm, view)), "rev_period")
+        show(bar_round(period_axis(money_axis(style(fig, 300, legend=False), pnl.revenue), pm, view)), "rev_period")
         st.caption("Florida pattern: AC repair surges May–Sep; winter is slow outside of installs and duct work.")
     with c2:
         st.markdown(f"**Gross margin by {unit}**")
@@ -255,7 +284,7 @@ with tab_rev:
                         marker_line=dict(color="#fcfcfb", width=1.5), customdata=pm.hover,
                         hovertemplate=f"{sname}<br>%{{customdata}}<br>$%{{y:,.0f}}<extra></extra>")
         fig.update_layout(barmode="stack")
-        show(period_axis(style(fig, 300, yfmt="$,.0s"), pm, view), "rev_mix")
+        show(period_axis(money_axis(style(fig, 300), pnl.revenue), pm, view), "rev_mix")  # stack height = period revenue
 
     note = M.partial_note(pm, view)
     if note:
@@ -314,7 +343,7 @@ with tab_mkt:
             fig.add_bar(x=pm.label, y=d.spend, name=ch, marker_color=col, marker_line=dict(color="#fcfcfb", width=1.5),
                         customdata=pm.hover, hovertemplate=f"{ch}<br>%{{customdata}}<br>$%{{y:,.0f}}<extra></extra>")
         fig.update_layout(barmode="stack")
-        show(period_axis(style(fig, 330, yfmt="$,.0s"), pm, view), "ad_spend")
+        show(period_axis(money_axis(style(fig, 330), cm.groupby("period").spend.sum()), pm, view), "ad_spend")
     note = M.partial_note(pm, view)
     if note:
         st.caption(note)
@@ -369,7 +398,8 @@ with tab_team:
             customdata=np.stack([tt.tech, tt.jobs], axis=-1),
             hovertemplate="%{customdata[0]}<br>Revenue $%{x:,.0f}<br>Margin %{y:.1%}<br>%{customdata[1]} jobs<extra></extra>"))
         fig.update_yaxes(tickformat=".0%", title="Gross margin")
-        fig.update_xaxes(tickformat="$,.0s", title="Revenue")
+        money_axis(fig, tt.revenue, axis="x")
+        fig.update_xaxes(title="Revenue")
         show(style(fig, 400, legend=False), "tech_scatter")
 
     st.markdown("**Technician detail**")
@@ -389,7 +419,7 @@ with tab_team:
                            text=[M.money(v) for v in pr.values], textposition="outside", cliponaxis=False,
                            hovertemplate="%{y}<br>$%{x:,.0f}<extra></extra>"))
     fig.update_yaxes(showgrid=False)
-    fig.update_xaxes(tickformat="$,.0s")
+    money_axis(fig, pr.values, axis="x")
     show(bar_round(style(fig, 280, legend=False)), "payroll_dept")
 
 # ================================================================ CASH & AR
@@ -413,7 +443,7 @@ with tab_cash:
         fig = go.Figure(go.Bar(x=ag.index.astype(str), y=ag.values, marker_color=[BLUE] + [ORANGE] * 4,
                                text=[M.money(v) for v in ag.values], textposition="outside", cliponaxis=False,
                                hovertemplate="%{x}<br>$%{y:,.0f}<extra></extra>"))
-        show(bar_round(style(fig, 320, legend=False, yfmt="$,.0s")), "aging")
+        show(bar_round(money_axis(style(fig, 320, legend=False), ag.values)), "aging")
         st.caption("Blue = not yet due. Orange = past due.")
     with c2:
         st.markdown("**Monthly cash: in vs. out**")
@@ -423,7 +453,7 @@ with tab_cash:
         fig.add_bar(x=cash.index, y=cash.cash_out, name="Cash out", marker_color=ORANGE,
                     hovertemplate="Cash out<br>%{x|%b %Y}<br>$%{y:,.0f}<extra></extra>")
         fig.update_layout(barmode="group")
-        show(bar_round(style(fig, 320, yfmt="$,.0s", xfmt="%b")), "cash_io")
+        show(bar_round(money_axis(style(fig, 320, xfmt="%b"), pd.concat([cash.collections, cash.cash_out]))), "cash_io")
 
     c1, c2 = st.columns(2)
     with c1:
@@ -432,7 +462,7 @@ with tab_cash:
                                    marker=dict(size=8, line=dict(color="#fcfcfb", width=2)), fill="tozeroy",
                                    fillcolor="rgba(42,120,214,0.10)", name="Cumulative net cash",
                                    hovertemplate="%{x|%b %Y}<br>$%{y:,.0f}<extra></extra>"))
-        show(style(fig, 300, legend=False, yfmt="$,.0s", xfmt="%b"), "cash_cum")
+        show(money_axis(style(fig, 300, legend=False, xfmt="%b"), cash.cumulative), "cash_cum")
         st.caption("Outflows = job materials, all payroll with taxes, operating expenses and advertising.")
     with c2:
         st.markdown("**Past-due balance by customer**")
